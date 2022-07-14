@@ -15,13 +15,8 @@ app.use(expressLayouts)
 app.set('layout', './layouts/main')
 app.set('view engine', 'ejs')
 
-app.get('/', async (request, response) => {
-    try {
-        response.render('index.ejs')
-    } catch (error) {
-        response.status(500).send({message: error.message})
-    }
-})
+const routes = require('./server/routes/stockRoutes.js')
+app.use('/', routes)
 
 //PORT = 8000
 app.listen(process.env.PORT || PORT, () => {
