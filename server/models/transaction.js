@@ -5,7 +5,6 @@ const transcationSchema = new mongoose.Schema({
         type: String,
         required: 'This field is required'
     },
-
     transactionDate: {
         type: String,
         required: String

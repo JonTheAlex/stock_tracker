@@ -7,5 +7,10 @@ const stockController = require('../controllers/stockController')
  */
 
  router.get('/', stockController.homepage);
+ router.get('/Data', stockController.data);
+ router.get('/News', stockController.news);
+ router.get('/wiki', stockController.wiki);
+ router.get('/about', stockController.about);
+ router.get('/SignIn', stockController.signin);
 
  module.exports = router

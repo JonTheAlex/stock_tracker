@@ -12,3 +12,68 @@ exports.homepage = async(request, response) => {
         response.status(500).send({message: error.message})
     }
 }
+
+/**
+ * GET /
+ * Data
+ */
+
+exports.data = async(request, response) => {
+    try {
+        response.render('data.ejs')
+    } catch (error) {
+        response.status(500).send({message: error.message})
+    }
+}
+
+/**
+ * GET /
+ * News
+ */
+
+exports.news = async(request, response) => {
+    try {
+        response.render('news.ejs')
+    } catch (error) {
+        response.status(500).send({message: error.message})
+    }
+}
+
+/**
+ * GET /
+ * Wiki
+ */
+
+exports.wiki = async(request, response) => {
+    try {
+        response.render('wiki.ejs')
+    } catch (error) {
+        response.status(500).send({message: error.message})
+    }
+}
+
+/**
+ * GET /
+ * About
+ */
+
+exports.about = async(request, response) => {
+    try {
+        response.render('about.ejs')
+    } catch (error) {
+        response.status(500).send({message: error.message})
+    }
+}
+
+/**
+ * GET /
+ * SignIn
+ */
+
+exports.signin = async(request, response) => {
+    try {
+        response.render('signin.ejs')
+    } catch (error) {
+        response.status(500).send({message: error.message})
+    }
+}
