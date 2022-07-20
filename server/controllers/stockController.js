@@ -7,7 +7,7 @@ require('../models/database')
 
 exports.homepage = async(request, response) => {
     try {
-        response.render('index.ejs')
+        response.render('index')
     } catch (error) {
         response.status(500).send({message: error.message})
     }
@@ -20,7 +20,7 @@ exports.homepage = async(request, response) => {
 
 exports.data = async(request, response) => {
     try {
-        response.render('data.ejs')
+        response.render('data')
     } catch (error) {
         response.status(500).send({message: error.message})
     }
@@ -33,7 +33,7 @@ exports.data = async(request, response) => {
 
 exports.news = async(request, response) => {
     try {
-        response.render('news.ejs')
+        response.render('news')
     } catch (error) {
         response.status(500).send({message: error.message})
     }
@@ -46,7 +46,7 @@ exports.news = async(request, response) => {
 
 exports.wiki = async(request, response) => {
     try {
-        response.render('wiki.ejs')
+        response.render('wiki')
     } catch (error) {
         response.status(500).send({message: error.message})
     }
@@ -59,7 +59,7 @@ exports.wiki = async(request, response) => {
 
 exports.about = async(request, response) => {
     try {
-        response.render('about.ejs')
+        response.render('about')
     } catch (error) {
         response.status(500).send({message: error.message})
     }
@@ -72,7 +72,7 @@ exports.about = async(request, response) => {
 
 exports.signin = async(request, response) => {
     try {
-        response.render('signin.ejs')
+        response.render('signin')
     } catch (error) {
         response.status(500).send({message: error.message})
     }
