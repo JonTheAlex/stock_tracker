@@ -7,7 +7,22 @@ require('../models/database')
 
 exports.homepage = async(request, response) => {
     try {
-        response.render('index')
+        let transactions = ''
+        response.render('index', {title:'Homepage', transactions})
+    } catch (error) {
+        response.status(500).send({message: error.message})
+    } 
+}
+
+
+/**
+ * GET /
+ * Blog
+ */
+
+exports.blog = async(request, response) => {
+    try {
+        response.render('blog')
     } catch (error) {
         response.status(500).send({message: error.message})
     }
@@ -15,38 +30,12 @@ exports.homepage = async(request, response) => {
 
 /**
  * GET /
- * Data
+ * Newsletter
  */
 
-exports.data = async(request, response) => {
+exports.newsletter = async(request, response) => {
     try {
-        response.render('data')
-    } catch (error) {
-        response.status(500).send({message: error.message})
-    }
-}
-
-/**
- * GET /
- * News
- */
-
-exports.news = async(request, response) => {
-    try {
-        response.render('news')
-    } catch (error) {
-        response.status(500).send({message: error.message})
-    }
-}
-
-/**
- * GET /
- * Wiki
- */
-
-exports.wiki = async(request, response) => {
-    try {
-        response.render('wiki')
+        response.render('newsletter')
     } catch (error) {
         response.status(500).send({message: error.message})
     }
