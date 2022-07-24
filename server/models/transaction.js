@@ -5,11 +5,11 @@ const transactionSchema = new mongoose.Schema({
         type: String,
         required: 'This field is required'
     },
-    status: {
+    state: {
         type: String,
         required: 'This field is required'
     },
-    state_district: {
+    district: {
         type: String,
         required: 'This field is required'
     },
@@ -18,6 +18,10 @@ const transactionSchema = new mongoose.Schema({
         required: 'This field is required'
     },
     asset_name: {
+        type: String,
+        required: 'This field is required'
+    },
+    asset_type: {
         type: String,
         required: 'This field is required'
     },

@@ -10,7 +10,6 @@
     <table class="table-data">
         <tr>
             <th>Name</th>
-            <th>Status</th>
             <th>State</th>
             <th>District</th>
             <th>Owner</th>
@@ -21,6 +20,22 @@
             <th>Amount</th>
         </tr>
 
+        <% if(transactions != '') { %>
+            <% transactions.forEach(transaction => { %>
+                <tr>
+                    <td><%=transaction.name %></td>
+                    <td><%=transaction.state %></td>
+                    <td><%=transaction.district %></td>
+                    <td><%=transaction.owner %></td>
+                    <td><%=transaction.asset_name %></td>
+                    <td><%=transaction.asset_type %></td>
+                    <td><%=transaction.transaction_type %></td>
+                    <td><%=transaction.transaction_date %></td>
+                    <td><%=transaction.notification_date %></td>
+                    <td><%=transaction.amount %></td>
+                </tr>
+            <% }) %>
+        <% } %>
         <!-- <tr>
             <td>1</td>
             <td>1</td>
@@ -131,7 +146,7 @@
             <td>1</td>
             <td>1</td>
         </tr>         -->
-    
+
     </table>
     <div class="navigation-buttons">
         <nav class="table-navigation">
