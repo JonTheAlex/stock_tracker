@@ -10,4 +10,5 @@ db.once('open', function(){
     console.log('Connected')
 })
 
-require('./Category')
+require('./Transaction')
+require('./Person')

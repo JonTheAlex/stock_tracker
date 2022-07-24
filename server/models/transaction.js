@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const transcationSchema = new mongoose.Schema({
+const transactionSchema = new mongoose.Schema({
     name: {
         type: String,
         required: 'This field is required'
