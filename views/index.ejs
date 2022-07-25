@@ -1,170 +1,70 @@
 <section class="table-content">
     <div class="table-title">
         <h1>Most Recent Trades</h1>
-    
         <form action="" method="post">
             <input type="text" placeholder="Search">
         </form>
     </div>
 
     <table class="table-data">
-        <tr>
-            <th>Name</th>
-            <th>State</th>
-            <th>District</th>
-            <th>Owner</th>
-            <th>Asset Name</th>
-            <th>Transaction Type</th>
-            <th>Transaction Date</th>
-            <th>Notification Date</th>
-            <th>Amount</th>
-        </tr>
-
-        <% if(transactions != '') { %>
-            <% transactions.forEach(transaction => { %>
-                <tr>
-                    <td><%=transaction.name %></td>
-                    <td><%=transaction.state %></td>
-                    <td><%=transaction.district %></td>
-                    <td><%=transaction.owner %></td>
-                    <td><%=transaction.asset_name %></td>
-                    <td><%=transaction.asset_type %></td>
-                    <td><%=transaction.transaction_type %></td>
-                    <td><%=transaction.transaction_date %></td>
-                    <td><%=transaction.notification_date %></td>
-                    <td><%=transaction.amount %></td>
-                </tr>
-            <% }) %>
-        <% } %>
-        <!-- <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>        
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>        
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>        
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>        
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>        
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>        
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>        
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>        
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>        
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>         -->
-
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>State</th>
+                <th>District</th>
+                <th>Owner</th>
+                <th>Asset Name</th>
+                <th>Transaction Type</th>
+                <th>Transaction Date</th>
+                <th>Notification Date</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(transactions != '') { %>
+                <% transactions.forEach(transaction => { %>
+                    <tr>
+                        <td><%=transaction.name %></td>
+                        <td><%=transaction.state %></td>
+                        <td><%=transaction.district %></td>
+                        <td><%=transaction.owner %></td>
+                        <td><%=transaction.asset_name %></td>
+                        <td><%=transaction.asset_type %></td>
+                        <td><%=transaction.transaction_type %></td>
+                        <td><%=transaction.transaction_date %></td>
+                        <td><%=transaction.notification_date %></td>
+                        <td><%=transaction.amount %></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+        </tbody> 
     </table>
-    <div class="navigation-buttons">
-        <nav class="table-navigation">
-            <ul>
-                <li><a href="">1</a></li>
-                <li><a href="">2</a></li>
-                <li><a href="">3</a></li>
-                <li><a href="">4</a></li>
-                <li><a href="">5</a></li>
-                <li><a href="">...</a></li>
-            </ul>
-        </nav>
-    </div>
 </section>
 
 <section>
     <div class="info-box">
-        
+        <div class="update">
+            <h4>Updates: </h4>
+            <p>Financial Trades from House and Senate Members</p>
+        </div>
+        <div class="website-data">
+            <div class="website-glance">
+                <h3>Trades at a Glance</h3>
+                <h6>Updated [X] minutes ago</h6>
+            </div>
+            <div class="records-count">
+                <h4>XX,XXX</h4>
+                <h6>Records Gathered</h6>
+            </div>
+            <div class="total-value">
+                <h4>$XXX,XXX</h4>
+                <h6>Total Value Traded</h6>
+            </div>
+            <div class="total-percent">
+                <h4>XX.XX%</h4>
+                <h6>Total % Return</h6>
+            </div>
+        </div>  
     </div>
 </section>
 
