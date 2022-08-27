@@ -1,3 +1,5 @@
+
+
 <section class="table-content">
     <div class="table-title">
         <h1>Most Recent Trades</h1>
@@ -166,7 +168,9 @@
     import {DataTable} from "simple-datatables"
 
     const transactionTable = document.querySelector(".table")
-    const dataTable = new DataTable(transactionTable)
+    const dataTable = new DataTable(transactionTable,{
+        sortable: true    
+    })
 </script>
 
 
