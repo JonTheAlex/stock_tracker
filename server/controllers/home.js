@@ -1,4 +1,5 @@
-require('../../config/database')
+const Transaction = require('../models/Transaction')
+const moment = require('moment')
 
 /**
  * GET /
@@ -8,8 +9,11 @@ require('../../config/database')
 module.exports = {
     getIndex: async(request, response) => {
         try {
-            let transactions = ''
-            response.render('index', {title:'Homepage', transactions})
+            let transactions = await Transaction.find()
+
+            console.log(transactions)
+
+            response.render('index', {title:'Capital.IO', moment:moment, transactions})
         } catch (error) {
             response.status(500).send({message: error.message})
         } 

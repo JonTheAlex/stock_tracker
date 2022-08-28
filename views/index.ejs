@@ -18,26 +18,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Cat</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
-                    <tr><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td><td>Lorem</td></tr>
+                    <% transactions.forEach(transaction => { %>
+                        <tr><td><%=transaction.name %></td>
+                            <td><%=transaction.state %></td>
+                            <td><%=transaction.district %></td>
+                            <td><%=transaction.owner %></td>
+                            <td><%=transaction.asset_name %></td>
+                            <td><%=transaction.transaction_type %></td>
+                            <td><%=moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
+                            <td><%=moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
+                            <td><%=transaction.amount %></td>
+                        </tr>
+                    <% }) %>
                 </tbody> 
             </table>
         </div>
