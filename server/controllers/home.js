@@ -1,26 +1,36 @@
 const Transaction = require('../models/Transaction')
 const moment = require('moment')
 
-/**
- * GET /
- * HOMEPAGE
- */
 
 module.exports = {
+    
+    /**
+     * GET /
+     * HOMEPAGE
+     */
+
     getIndex: async(request, response) => {
         try {
             let transactions = await Transaction.find()
-
-            console.log(transactions)
-
-            response.render('index', {title:'Capital.IO', moment:moment, transactions})
+            response.render('index', {title:'Capital.IO', moment:moment, layout:'./layouts/main', transactions})
         } catch (error) {
             response.status(500).send({message: error.message})
         } 
+    },
+
+    /**
+     * GET /
+     * SignIn
+     */
+
+    getSignin: async(request, response) => {
+        try {
+            response.render('signin', {layout:'./layouts/signin'})
+        } catch (error) {
+            response.status(500).send({message: error.message})
+        }
     }
 }
-
-
 
 // /**
 //  * GET /
@@ -56,19 +66,6 @@ module.exports = {
 // exports.about = async(request, response) => {
 //     try {
 //         response.render('about')
-//     } catch (error) {
-//         response.status(500).send({message: error.message})
-//     }
-// }
-
-// /**
-//  * GET /
-//  * SignIn
-//  */
-
-// exports.signin = async(request, response) => {
-//     try {
-//         response.render('signin')
 //     } catch (error) {
 //         response.status(500).send({message: error.message})
 //     }
