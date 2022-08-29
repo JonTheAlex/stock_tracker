@@ -10,7 +10,8 @@ require('dotenv').config({path: './config/.env'})
 connectDB()
 
 app.use(express.urlencoded({extended:true}))
-app.use(express.static('public'))
+app.use('/public', express.static(__dirname + '/public'))
+
 app.use(expressLayouts)
 app.use(cors())
 

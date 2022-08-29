@@ -21,6 +21,14 @@ const transactionSchema = new mongoose.Schema({
         type: String,
         required: 'This field is required'
     },
+    asset_ticker: {
+        type: String,
+        required: 'This field is required'
+    },
+    asset_description: {
+        type: String,
+        required: 'This field is required'
+    },
     asset_type: {
         type: String,
         required: 'This field is required'
