@@ -9,7 +9,6 @@ const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
 const expressLayouts = require('express-ejs-layouts')
-const connectDB = require('./config/database')
 const mainRoutes = require('./server/routes/main')
 
 require('dotenv').config({path: './config/.env'})
@@ -39,7 +38,7 @@ app.use(
 
 // Passport middleware
 app.use(passport.initialize())
-app.use(pass.port.session())
+app.use(passport.session())
 
 app.use(flash())
 
