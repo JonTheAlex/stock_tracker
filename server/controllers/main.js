@@ -16,19 +16,6 @@ module.exports = {
         } catch (error) {
             response.status(500).send({message: error.message})
         } 
-    },
-
-    /**
-     * GET /
-     * SignIn
-     */
-
-    getSignin: async(request, response) => {
-        try {
-            response.render('signin', {layout:'./layouts/signin'})
-        } catch (error) {
-            response.status(500).send({message: error.message})
-        }
     }
 }
 
