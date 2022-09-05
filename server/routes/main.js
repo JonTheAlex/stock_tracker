@@ -9,7 +9,8 @@ const authController = require('../controllers/auth')
 
 router.get('/', mainController.getIndex);
 router.get('/signin', authController.getSignIn);
-router.get('/signup', authController.getSignUp)
+router.get('/signup', authController.getSignUp);
+router.post('/signup', authController.postSignup);
 // router.get('/Blog', stockController.blog);
 //  router.get('/Newsletter', stockController.newsletter);
 //  router.get('/about', stockController.about);

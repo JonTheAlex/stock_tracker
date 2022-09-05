@@ -9,7 +9,7 @@ const User = require('../models/User')
 
 exports.getSignIn = (request, response) => {
     try {
-        response.render('signin', { layout:'./layouts/signin'})
+        response.render('signin', {title: 'Login', layout:'./layouts/signin'})
     } catch (error) {
         response.status(500).send({message: error.message})
     }
@@ -22,11 +22,11 @@ exports.postSignIn = (request, response, next) => {
 
     if (validationErrors.length) {
         request.flash('errors', validationErrors)
-        return response.redirect('signin', { layout:'./layouts/signin' })
+        return response.redirect('signup', { layout:'./layouts/signin' })
     }
     request.body.email = validator.normalizeEmail(request.body.email, { gmail_remove_dots: false })
 
-    paspport.authenticate('local', (err, user, info) => {
+    passport.authenticate('local', (err, user, info) => {
         if (err) { return next(err) }
         if (!user) {
             request.flash('errors', info)
@@ -35,7 +35,7 @@ exports.postSignIn = (request, response, next) => {
         request.login(user, (err) => {
             if (err) { return next(err) }
             request.flash('success', { msg: 'Success! You are logged in.' })
-            response.redirect(request.session.returnTo || '/transactions')
+            response.redirect(request.session.returnTo || '/')
         })
     })(request, response, next)
 }
@@ -53,10 +53,10 @@ exports.signOut = (request, response) => {
 
 exports.getSignUp = (request, response) => {
     if (request.user) {
-        return response.redirect('/transactions')
+        return response.redirect('/')
     }
     try {
-        response.render('signup', { layout: './layouts/signin' })
+        response.render('signup', {title: 'Create Account', layout: './layouts/signin' })
     } catch (error) {
         response.status(500).send({ message: error.message })
     }    
@@ -64,13 +64,14 @@ exports.getSignUp = (request, response) => {
 
 exports.postSignup = (request, response, next) => {
     const validationErrors = []
-    if (!validator.isEmail(request.body.password)) validationErrors.push({ msg: 'Please enter a valuid email address.' })
+    if (!validator.isEmail(request.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if (!validator.isLength(request.body.password, { min: 8 })) validationErrors.push({ msg: 'Password must be at least 8 characters long' })
     if (request.body.password !== request.body.confirmPassword) validationErrors.push({ msg: 'Passwords do not match' })
 
     if (validationErrors.length){
         request.flash('errors', validationErrors)
-        return response.redirect('../signup')
+        console.log(validationErrors)
+        return response.redirect('/')
     }
     request.body.email = validator.normalizeEmail(request.body.email, { gmail_remove_dots: false })
 
@@ -87,7 +88,7 @@ exports.postSignup = (request, response, next) => {
         if (err) { return next(err) }
         if (existingUser) {
             request.flash('errors', { msg: 'Account with that email address or username already exists.' })
-            return response.redirect('../signup')
+            return response.redirect('signin')
         }
         user.save((err) => {
             if (err) { return next(err) }
@@ -95,7 +96,7 @@ exports.postSignup = (request, response, next) => {
                 if (err) {
                     return next(err)
                 }
-                response.redirect('/transactions')
+                response.redirect('/')
             })
         })
     })
