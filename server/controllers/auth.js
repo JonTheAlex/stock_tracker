@@ -7,7 +7,7 @@ const User = require('../models/User')
      * SignIn
 **/
 
-exports.getSignin = (request, response) => {
+exports.getSignIn = (request, response) => {
     try {
         response.render('signin', { layout:'./layouts/signin'})
     } catch (error) {
@@ -15,7 +15,7 @@ exports.getSignin = (request, response) => {
     }
 }
 
-exports.postSignin = (request, response, next) => {
+exports.postSignIn = (request, response, next) => {
     const validationErrors = []
     if(!validator.isEmail(request.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if(validator.isEmpty(request.body.password)) validationErrors.push({ msg: 'Password cannot be blank.' })
@@ -51,13 +51,15 @@ exports.signOut = (request, response) => {
     })
 }
 
-exports.getSignup = (request, response) => {
+exports.getSignUp = (request, response) => {
     if (request.user) {
         return response.redirect('/transactions')
     }
-    response.render('signup', {
-        title: 'Create Account'
-    })
+    try {
+        response.render('signup', { layout: './layouts/signin' })
+    } catch (error) {
+        response.status(500).send({ message: error.message })
+    }    
 }
 
 exports.postSignup = (request, response, next) => {
