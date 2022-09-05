@@ -30,7 +30,7 @@ exports.postSignin = (request, response, next) => {
         if (err) { return next(err) }
         if (!user) {
             request.flash('errors', info)
-            return response.redirect('signin', './layouts/login')
+            return response.redirect('signin', './layouts/signin')
         }
         request.login(user, (err) => {
             if (err) { return next(err) }
