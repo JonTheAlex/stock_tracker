@@ -18,11 +18,14 @@ require('./config/passport')(passport)
 
 connectDB()
 
-app.set('view engine', 'ejs')
 app.use('/public', express.static(path.join(__dirname + '/public')))
-app.set('layout', './layouts/main')
+
+app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(expressLayouts)
+
+app.set('layout', './layouts/main')
+
 app.use(express.urlencoded({extended:true}))
 
 //Sessions
