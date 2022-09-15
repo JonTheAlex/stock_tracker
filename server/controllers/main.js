@@ -12,7 +12,7 @@ module.exports = {
     getIndex: async(request, response) => {
         try {
             let transactions = await Transaction.find()
-            response.render('index', {title:'Capital.IO', moment:moment, layout:'./layouts/main', transactions})
+            response.render('index', {title:'Capital.IO', moment:moment, layout:'./layouts/main', transactions, loginStatus: '/signin'})
         } catch (error) {
             response.status(500).send({message: error.message})
         } 
