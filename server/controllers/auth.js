@@ -30,7 +30,7 @@ exports.postSignIn = (request, response, next) => {
         if (err) { return next(err) }
         if (!user) {
             request.flash('errors', info)
-            return response.redirect('signin', './layouts/signin')
+            return response.redirect('signin', { layout:'./layouts/signin' })
         }
         request.login(user, (err) => {
             if (err) { return next(err) }
@@ -43,6 +43,7 @@ exports.postSignIn = (request, response, next) => {
 exports.signOut = (request, response) => {
     request.logout(() => {
         console.log('User has logged out.')
+        response.redirect('/')
     })
     request.session.destroy((err) => {
         if (err) console.log('Error : Failed to destroy the session during logout.', err)

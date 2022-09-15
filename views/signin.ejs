@@ -52,26 +52,20 @@
 </style>
 <body class="text-center">
   <main class="form-signin w-100 m-auto">
-    <form>
+    <form action="/signin" method="POST" >
       <img src="" alt="" class="mb-4">
         <h1 class="mb-3 fw-normal">Sign In</h1>
           <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">  
-            <label for="floatingInput">Email Address</label>
+            <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="name@example.com">  
+            <label for="floatingEmail">Email Address</label>
           </div>
           <div class="form-floating">
-            <input type="password" name="" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Password</label>
           </div>
-          <div class="checkbox mb-3">
-            <label for="">
-              <input type="checkbox" value="remember-me">
-              Remember me
-            </label>
-          </div>
           <button class="w-100 mb-3 btn btn-lg btn-primary" type="submit">Sign in</button>
-          <a href="/signup" class="w-100 mb-3 btn btn-lg btn-primary" role="button">No Account? Sign up</a>
-          <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
     </form>
+    <a href="/signup" class="w-100 mb-3 btn btn-lg btn-primary" role="button">No Account? Sign up</a>
+    <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
   </main>
 </body>
