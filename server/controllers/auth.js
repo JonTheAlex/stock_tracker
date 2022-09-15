@@ -17,6 +17,7 @@ exports.getSignIn = (request, response) => {
 
 exports.postSignIn = (request, response, next) => {
     const validationErrors = []
+    console.log(request)
     if(!validator.isEmail(request.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if(validator.isEmpty(request.body.password)) validationErrors.push({ msg: 'Password cannot be blank.' })
 
@@ -48,7 +49,6 @@ exports.signOut = (request, response) => {
     request.session.destroy((err) => {
         if (err) console.log('Error : Failed to destroy the session during logout.', err)
         request.user = null
-        response.redirect('/')
     })
 }
 
