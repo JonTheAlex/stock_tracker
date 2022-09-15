@@ -1,3 +1,4 @@
+const flash = require('express-flash')
 const passport = require('passport')
 const validator = require('validator')
 const User = require('../models/User')
