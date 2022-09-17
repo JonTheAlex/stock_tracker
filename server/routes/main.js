@@ -13,6 +13,7 @@ router.post('/signin', authController.postSignIn)
 router.get('/signup', authController.getSignUp);
 router.post('/signup', authController.postSignup);
 router.get('/signout', authController.signOut)
+//router.get('/profile/', profileController.getProfile)
 // router.get('/Blog', stockController.blog);
 //  router.get('/Newsletter', stockController.newsletter);
 //  router.get('/about', stockController.about);

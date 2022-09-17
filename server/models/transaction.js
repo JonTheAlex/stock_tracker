@@ -3,7 +3,11 @@ const mongoose = require('mongoose');
 const transactionSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: 'This field is required'
+        ref: 'Person'
+    },
+    personId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Person'
     },
     state: {
         type: String,

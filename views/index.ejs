@@ -19,15 +19,15 @@
                 </thead>
                 <tbody>
                     <% transactions.forEach(transaction => { %>
-                        <tr><td><%=transaction.name %></td>
-                            <td><%=transaction.state %></td>
-                            <td><%=transaction.district %></td>
-                            <td><%=transaction.owner %></td>
-                            <td><%=transaction.asset_name %></td>
-                            <td><%=transaction.transaction_type %></td>
-                            <td><%=moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
-                            <td><%=moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
-                            <td><%=transaction.amount %></td>
+                        <tr><td><a href='/person/<%= transaction.personId %>'><%= transaction.name %></a></td>
+                            <td><%= transaction.state %></td>
+                            <td><%= transaction.district %></td>
+                            <td><%= transaction.owner %></td>
+                            <td><%= transaction.asset_name %></td>
+                            <td><%= transaction.transaction_type %></td>
+                            <td><%= moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
+                            <td><%= moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
+                            <td><%= transaction.amount %></td>
                         </tr>
                     <% }) %>
                 </tbody> 
