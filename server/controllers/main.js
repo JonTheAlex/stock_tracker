@@ -1,4 +1,5 @@
 const Transaction = require('../models/Transaction')
+const Person = require('../models/Person')
 const moment = require('moment')
 
 
@@ -10,8 +11,9 @@ module.exports = {
      */
 
     getIndex: async(request, response) => {
-        try {
-            let transactions = await Transaction.find()
+        let transactions = await Transaction.find()
+        
+        try {            
             response.render('index', {
                 title:'Capital.IO', 
                 moment:moment, 

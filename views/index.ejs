@@ -19,7 +19,7 @@
                 </thead>
                 <tbody>
                     <% transactions.forEach(transaction => { %>
-                        <tr><td><a href='/person/<%= transaction.personId %>'><%= transaction.name %></a></td>
+                        <tr><td><a href='/person/<%= transaction.name %>'><%= transaction.name %></a></td>
                             <td><%= transaction.state %></td>
                             <td><%= transaction.district %></td>
                             <td><%= transaction.owner %></td>
