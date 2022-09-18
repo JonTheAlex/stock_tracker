@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const mainController = require('../controllers/main')
 const authController = require('../controllers/auth')
+const personController = require('../controllers/person')
 
 /**
  * App Routes
@@ -13,6 +14,7 @@ router.post('/signin', authController.postSignIn)
 router.get('/signup', authController.getSignUp);
 router.post('/signup', authController.postSignup);
 router.get('/signout', authController.signOut)
+router.get('/person/:id', personController.getPerson)
 //router.get('/profile/', profileController.getProfile)
 // router.get('/Blog', stockController.blog);
 //  router.get('/Newsletter', stockController.newsletter);

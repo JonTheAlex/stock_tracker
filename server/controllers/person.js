@@ -1,4 +1,4 @@
-const Transaction = require('../models/Transaction')
+const Person = require('../models/Person')
 const moment = require('moment')
 
 module.exports = {
@@ -10,37 +10,15 @@ module.exports = {
 
     getPerson: async(request, response) => {
         try {
-            let transactions = await Transaction.findById(req.params.id)
-            response.render('person')
+            const person = await Person.findById(request.params.id)
+            response.render('person', { 
+                title: 'Capital.IO',  
+                layout: './layouts/main',
+                person: person,
+                loginStatus: request.user
+            })
         } catch (error) {
             response.status(500).send({message: error.message})
         } 
     }
-
-    //  getPerson: async(request, response) => {
-    //     try {
-    //         let transactions = await Transaction.findById(req.params.id)
-    //         response.render('person', {
-    //             title:'Capital.IO', 
-    //             moment:moment, 
-    //             layout:'./layouts/main', 
-    //             transactions, 
-    //             loginStatus: request.user
-    //         })
-    //     } catch (error) {
-    //         response.status(500).send({message: error.message})
-    //     } 
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
 }
