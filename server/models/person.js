@@ -14,9 +14,12 @@ const personSchema = new mongoose.Schema({
         type: String
     },
     party: {
-        type: String,
+        type: String
     },
     chamber: {
+        type: String
+    },
+    image: {
         type: String
     }
 })
