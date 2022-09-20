@@ -5,7 +5,7 @@
         </div>
     <div class="col-md-8">
         <div class="card-body">
-            <h5 class="card-title">Name: <%= person.name %>></h5>
+            <h5 class="card-title">Name: <%= person.name %></h5>
             <p class="card-text">Position: <%= person.position %></p>
             <p class="card-text">State: <%= person.state %></p>
             <p class="card-text">District: <%= person.district %></p>
@@ -47,12 +47,58 @@
             <% }) %>
         </tbody> 
     </table>
+    <h3>Assets</h3>
+    <table id="assetTable">
+        <thead>
+            <tr>
+                <th>Asset</th>
+                <th>Owner</th>
+                <th>Value</th>
+                <th>Income Type(s)</th>
+                <th>Income</th>
+                <th>Tx.>$1000?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Asset</td>
+                <td>Asset</td>
+                <td>Asset</td>
+                <td>Asset</td>
+                <td>Asset</td>
+                <td>Asset</td>
+            </tr>
+        </tbody> 
+    </table>
+    <h3>Earned Income</h3>
+    <table id="earnedIncomeTable">
+        <thead>
+            <tr>
+                <th>Source</th>
+                <th>Type</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Asset</td>
+                <td>Asset</td>
+                <td>Asset</td>
+            </tr>
+        </tbody> 
+    </table>
 </div>
 
 <script>
-    const dataTable = new simpleDatatables.DataTable("#transactionTable", {
+    const transactionTable = new simpleDatatables.DataTable("#transactionTable", {
     sortable: true,
     fixedHeight: true,
     searchable: true
-})
+    })
+
+    const assetTable = new simpleDatatables.DataTable("#assetTable", {
+        fixedHeight: true,
+    })
+    
+    const incomeTable = new simpleDatatables.DataTable("#earnedIncomeTable", {
+        fixedHeight: true,
+    })
 </script>
