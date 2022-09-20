@@ -11,14 +11,14 @@ module.exports = {
      */
 
     getIndex: async(request, response) => {
-        let transactions = await Transaction.find().populate({path: 'person', select: '_id', select: 'name'})
+        const transactions = await Transaction.find().populate({path: 'person', select: '_id', select: 'name'})
 
         try {            
             response.render('index', {
                 title:'Capital.IO', 
                 moment:moment, 
                 layout:'./layouts/main', 
-                transactions, 
+                transactions:transactions, 
                 loginStatus: request.user
             })
         } catch (error) {

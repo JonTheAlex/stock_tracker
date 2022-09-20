@@ -1,1 +1,58 @@
-<h1>Person Page</h1>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+    <div class="col-md-8">
+        <div class="card-body">
+            <h5 class="card-title">Name: <%= person.name %>></h5>
+            <p class="card-text">Position: <%= person.position %></p>
+            <p class="card-text">State: <%= person.state %></p>
+            <p class="card-text">District: <%= person.district %></p>
+            <p class="card-text">Party: <%= person.party %></p>
+            <p class="card-text">Chamber: <%= person.chamber %></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<h3>Stock Trades</h3>
+<div class="container-fluid">
+    <table id="transactionTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>State</th>
+                <th>Owner</th>
+                <th>District</th>
+                <th>Asset</th>
+                <th>Transaction Type</th>
+                <th>Notification Date</th>
+                <th>Transaction Date</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% transactions.forEach(transaction => { %>
+                <tr><td><%= person.name %></a></td>
+                    <td><%= transaction.state %></td>
+                    <td><%= transaction.district %></td>
+                    <td><%= transaction.owner %></td>
+                    <td><%= transaction.asset_name %></td>
+                    <td><%= transaction.transaction_type %></td>
+                    <td><%= moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
+                    <td><%= moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
+                    <td><%= transaction.amount %></td>
+                </tr>
+            <% }) %>
+        </tbody> 
+    </table>
+</div>
+
+<script>
+    const dataTable = new simpleDatatables.DataTable("#transactionTable", {
+    sortable: true,
+    fixedHeight: true,
+    searchable: true
+})
+</script>
