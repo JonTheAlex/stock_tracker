@@ -45,6 +45,7 @@ app.use(passport.session())
 app.use(flash())
 
 app.use('/', mainRoutes)
+app.use('/form', formRoutes)
 
 //PORT = 8000
 app.listen(process.env.PORT, () => {
