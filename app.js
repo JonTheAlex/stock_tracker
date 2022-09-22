@@ -10,6 +10,7 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const expressLayouts = require('express-ejs-layouts')
 const mainRoutes = require('./server/routes/main')
+const formRoutes = require('./server/routes/form')
 
 require('dotenv').config({path: './config/.env'})
 
