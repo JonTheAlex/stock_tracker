@@ -31,6 +31,11 @@
                   <a class="nav-link" href="/signin">Sign-In</a>
                 <% } %>
               </li>
+              <% if (loginStatus) { %>
+                <li>
+                  <a class="nav-link" href="/form">Form Submission</a>
+                </li>
+              <% } %>
             </ul>
           </div>
         </div>
