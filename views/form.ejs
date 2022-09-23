@@ -1,80 +1,82 @@
 <h3>Transaction Submission Form</h3>
-<form>
+<form action="/form/createTransaction/" method="POST">
     <div class="form-row">
       <div class="col">
-        <input type="text" class="form-control" placeholder="Person">
+        <input type="text" class="form-control" placeholder="Person" id="person" name="person">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="State">
+        <input type="text" class="form-control" placeholder="State" id="state" name="state">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="District">
+        <input type="text" class="form-control" placeholder="District" id="district" name="district">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Asset Name">
+        <input type="text" class="form-control" placeholder="Asset Name" id="asset_name" name="asset_name">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Asset Ticker">
+        <input type="text" class="form-control" placeholder="Asset Ticker" id="asset_ticker" name="asset_ticker">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Asset Description">
+        <input type="text" class="form-control" placeholder="Asset Description" id="asset_description" name="asset_description">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Asset Type">
+        <input type="text" class="form-control" placeholder="Asset Type" id="asset_type" name="asset_type">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Transaction Type">
+        <input type="text" class="form-control" placeholder="Transaction Type" id="transaction_type" name="transaction_type">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Transaction Date">
+        <input type="text" class="form-control" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Notification Date">
+        <input type="text" class="form-control" placeholder="Notification Date" id="notification_date" name="notification_date">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Amount">
+        <input type="text" class="form-control" placeholder="Amount" id="amount" name="amount">
       </div>
     </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <h3>Asset Submission Form</h3>
-<form>
+<form form action="/form/createAsset/" method="POST"> 
     <div class="form-row">
         <div class="col">
-            <input type="text" class="form-control" placeholder="Person">
+            <input type="text" class="form-control" placeholder="Person" id="person" name="person">
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="Asset">
+            <input type="text" class="form-control" placeholder="Asset" id="asset" name="asset">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Asset Owner">
+          <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Asset Income Type">
+          <input type="text" class="form-control" placeholder="Asset Income Type" id="asset_income_type" name="asset_income_type">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Asset Income">
+          <input type="text" class="form-control" placeholder="Asset Income" id="asset_income" name="asset_income">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Asset Taxable?">
+          <input type="text" class="form-control" placeholder="Taxable Asset?" id="taxable_asset" name="taxable_asset">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Income Source">
+          <input type="text" class="form-control" placeholder="Income Source" id="income_source" name="income_source">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Income Type">
+          <input type="text" class="form-control" placeholder="Income Type" id="income_type" name="income_type">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Income Amount">
+          <input type="text" class="form-control" placeholder="Income Amount" id="income_amount" name="income_amount">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Transaction Date">
+          <input type="text" class="form-control" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Notification Date">
+          <input type="text" class="form-control" placeholder="Notification Date" id="notification_date" name="notification_date">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Amount">
+          <input type="text" class="form-control" placeholder="Amount" id="amount" name="amount">
         </div>
     </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
