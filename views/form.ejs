@@ -1,11 +1,18 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <h3>Transaction Submission Form</h3>
 <form action="/form/createTransaction/" method="POST">
-    <div class="form-row">
       <div class="col">
-        <input type="text" class="form-control" placeholder="Person" id="person" name="person">
+        <label for="sel1">Select Person:</label>
+        <select class="form-control" id="sel1" placeholder="Person">
+          <option value="" disabled selected>Select Person</option>
+        </select>
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="State" id="state" name="state">
+        <label for="sel1">Select State:</label>
+        <select class="form-control" id="sel1" placeholder="State">
+          <option value="" disabled selected>Select State</option>
+        </select>
       </div>
       <div class="col">
         <input type="text" class="form-control" placeholder="District" id="district" name="district">
@@ -26,10 +33,10 @@
         <input type="text" class="form-control" placeholder="Transaction Type" id="transaction_type" name="transaction_type">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
+        <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Notification Date" id="notification_date" name="notification_date">
+        <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_date" name="notification_date">
       </div>
       <div class="col">
         <input type="text" class="form-control" placeholder="Amount" id="amount" name="amount">
@@ -69,10 +76,10 @@
           <input type="text" class="form-control" placeholder="Income Amount" id="income_amount" name="income_amount">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
+          <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Notification Date" id="notification_date" name="notification_date">
+          <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_date" name="notification_date">
         </div>
         <div class="col">
           <input type="text" class="form-control" placeholder="Amount" id="amount" name="amount">
@@ -80,3 +87,5 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<script>flatpickr('.calendar', {})</script>

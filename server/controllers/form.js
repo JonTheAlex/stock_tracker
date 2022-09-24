@@ -3,7 +3,7 @@ const Asset = require('../models/Asset')
 const Person = require('../models/Person')
 
     exports.getForm = (request, response) => {
-        try {
+        try {            
             response.render('form', {
                 title: 'Capital.IO',
                 layout: './layouts/main',
