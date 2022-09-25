@@ -1,16 +1,18 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <h3>Transaction Submission Form</h3>
+
 <form action="/form/createTransaction/" method="POST">
+    <div class="form-row">
       <div class="col">
-        <label for="sel1">Select Person:</label>
-        <select class="form-control" id="sel1" placeholder="Person">
+        <label for="person-transaction">Select Person:</label>
+        <select class="form-control person-select" id="person-transaction" placeholder="Person">
           <option value="" disabled selected>Select Person</option>
         </select>
       </div>
       <div class="col">
-        <label for="sel1">Select State:</label>
-        <select class="form-control" id="sel1" placeholder="State">
+        <label for="state-transaction">Select State:</label>
+        <select class="form-control state-select" id="state-transaction" placeholder="State">
           <option value="" disabled selected>Select State</option>
         </select>
       </div>
@@ -36,24 +38,41 @@
         <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
       </div>
       <div class="col">
-        <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_date" name="notification_date">
+        <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_transaction_date" name="notification_transaction_date">
       </div>
       <div class="col">
-        <input type="text" class="form-control" placeholder="Amount" id="amount" name="amount">
+        <label for="transaction-amount">Select Amount:</label>
+        <select class="form-control" id="transaction-amount" placeholder="Amount">
+          <option value="" disabled selected>Select Amount</option>
+          <option value="0">$0 - $15,000</option>
+          <option value="1">$15,001 - $50,000</option>
+          <option value="2">$50,001 - $100,000</option>
+          <option value="3">$100,001 - $250,000</option>
+          <option value="4">$250,000 - $500,000</option>
+          <option value="5">$500,001 - $1,000,000</option>
+          <option value="6">$1,000,001 - $5,000,000</option>
+          <option value="7">$5,000,001 - $25,000,000</option>
+        </select>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" id="transaction-btn">Submit</button>
 </form>
 
 <h3>Asset Submission Form</h3>
 <form form action="/form/createAsset/" method="POST"> 
     <div class="form-row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Person" id="person" name="person">
-        </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Asset" id="asset" name="asset">
-        </div>
+      <div class="col">
+        <label for="person-asset">Select Person:</label>
+        <select class="form-control person-select" id="person-asset" placeholder="Person">
+          <option value="" disabled selected>Select Person</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="state-asset">Select State:</label>
+        <select class="form-control state-select" id="state-asset" placeholder="State">
+          <option value="" disabled selected>Select State</option>
+        </select>
+      </div>
         <div class="col">
           <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">
         </div>
@@ -76,16 +95,28 @@
           <input type="text" class="form-control" placeholder="Income Amount" id="income_amount" name="income_amount">
         </div>
         <div class="col">
-          <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
+          <input type="text" class="form-control calendar" placeholder="Transaction Date" id="asset_date" name="asset_date">
         </div>
         <div class="col">
-          <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_date" name="notification_date">
+          <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_asset_date" name="notification_asset_date">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Amount" id="amount" name="amount">
+          <label for="asset-amount">Select Amount:</label>
+          <select class="form-control" id="asset-amount" placeholder="Amount">
+            <option value="" disabled selected>Select Amount</option>
+            <option value="0">$0 - $15,000</option>
+            <option value="1">$15,001 - $50,000</option>
+            <option value="2">$50,001 - $100,000</option>
+            <option value="3">$100,001 - $250,000</option>
+            <option value="4">$250,000 - $500,000</option>
+            <option value="5">$500,001 - $1,000,000</option>
+            <option value="6">$1,000,001 - $5,000,000</option>
+            <option value="7">$5,000,001 - $25,000,000</option>
+          </select>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" id="asset-btn">Submit</button>
 </form>
 
 <script>flatpickr('.calendar', {})</script>
+<script src="/public/js/main.js"></script>

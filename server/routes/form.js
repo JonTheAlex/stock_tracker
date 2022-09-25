@@ -6,6 +6,7 @@ const formController = require('../controllers/form')
 router.get('/', formController.getForm);
 router.post('/transaction', formController.createTransaction)
 router.post('/asset', formController.createAsset)
+router.get('/data', formController.getData)
 
 module.exports = router
 
