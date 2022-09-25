@@ -37,22 +37,3 @@ function populateDropDown(dropDownData){
         })
     })
 }      
-
-    // persons.forEach((person) => {
-    //     let option = document.createElement('option')
-    //     option.value = person._id
-    //     option.innerHTML = person.name
-    //     person_select.forEach((person) => {
-    //         person.append(option)
-    //     })
-    // })
-
-    // states.forEach((state) => {
-    //     let option = document.createElement('option')
-    //     option.value = state.abbreviation
-    //     option.innerHTML = state.name
-    //     state_select.forEach((state) => {
-    //         state.append(option)
-    //     })
-    // })
-
