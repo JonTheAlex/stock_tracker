@@ -61,29 +61,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td>Asset</td>
-                <td>Asset</td>
-                <td>Asset</td>
-                <td>Asset</td>
-                <td>Asset</td>
-                <td>Asset</td>
-            </tr>
-        </tbody> 
-    </table>
-    <h3>Earned Income</h3>
-    <table id="earnedIncomeTable">
-        <thead>
-            <tr>
-                <th>Source</th>
-                <th>Type</th>
-                <th>Amount</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Asset</td>
-                <td>Asset</td>
-                <td>Asset</td>
-            </tr>
+            <% assets.forEach(asset => { %>
+                <tr><td><%= person.name %></td>
+                    <td><%= asset.asset_owner %></td>
+                    <td><%= asset.asset_name %></td>
+                    <td><%= asset.asset_ticker %></td>
+                    <td><%= asset.asset_description %></td>
+                    <td><%= asset.asset_value %></td>
+                    <td><%= asset.asset_income_type %></td>
+                    <td><%= asset.asset_income_amount %></td>
+                    <td><%= asset.notification_date %></td>
+                    <td><%= asset.transaction_date %></td>
+                    <td><%= asset.amount %></td>
+                </tr>
+            <% }) %>
         </tbody> 
     </table>
 </div>
