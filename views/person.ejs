@@ -22,9 +22,7 @@
         <thead>
             <tr>
                 <th>Name</th>
-                <th>State</th>
                 <th>Owner</th>
-                <th>District</th>
                 <th>Asset</th>
                 <th>Transaction Type</th>
                 <th>Notification Date</th>
@@ -35,8 +33,6 @@
         <tbody>
             <% transactions.forEach(transaction => { %>
                 <tr><td><%= person.name %></a></td>
-                    <td><%= person.state %></td>
-                    <td><%= person.district %></td>
                     <td><%= transaction.owner %></td>
                     <td><%= transaction.asset_name %></td>
                     <td><%= transaction.transaction_type %></td>
@@ -51,12 +47,17 @@
     <table id="assetTable">
         <thead>
             <tr>
-                <th>Asset</th>
+                <th>Name</th>
                 <th>Owner</th>
+                <th>Asset</th>
+                <th>Ticker</th>
+                <th>Description</th>
                 <th>Value</th>
                 <th>Income Type(s)</th>
-                <th>Income</th>
-                <th>Tx.>$1000?</th>
+                <th>Income Amount</th>
+                <th>Notification Date</th>
+                <th>Transaction Date</th>
+                <th>Amount</th>
             </tr>
         </thead>
         <tbody>
