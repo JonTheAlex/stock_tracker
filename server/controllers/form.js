@@ -16,9 +16,9 @@ const Person = require('../models/Person')
 
     exports.createTransaction = async (request, response) => {
         try {
-            data = {
+            await Transaction.create({
                 person: request.body.personTransaction,
-                asset_owner: request.body.asset_owner,
+                owner: request.body.asset_owner,
                 asset_name: request.body.asset_name,
                 asset_ticker: request.body.asset_ticker,
                 asset_description: request.body.asset_description,
@@ -27,9 +27,9 @@ const Person = require('../models/Person')
                 transaction_date: request.body.transaction_date,
                 notification_date: request.body.notification_transaction_date,
                 amount: request.body.amountTransaction
-            }
-            console.log(data)
+            })
             console.log('Transaction Created')
+            response.redirect('/form')
         } catch (error) {
             console.log(error)
             console.log('Transaction Failed')
@@ -38,7 +38,7 @@ const Person = require('../models/Person')
 
     exports.createAsset = async (request, response) => {
         try {
-            data = {
+            await Asset.create({
               person: request.body.personAsset,
               asset_name: request.body.asset_name,
               asset_description: request.body.asset_description,
@@ -50,9 +50,9 @@ const Person = require('../models/Person')
               transaction_date: request.body.transaction_asset_date,
               notification_date: request.body.notification_asset_date,
               amount: request.body.amountAsset
-            }
-            console.log(data)
+            })
             console.log('Asset Created')  
+            response.redirect('/form')
         } catch (error) {
             console.log(error)
             console.log('Asset Failed')

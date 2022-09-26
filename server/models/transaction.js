@@ -5,14 +5,6 @@ const transactionSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Person',
     },
-    state: {
-        type: String,
-        required: 'This field is required'
-    },
-    district: {
-        type: String,
-        required: 'This field is required'
-    },
     owner: {
         type: String,
         required: 'This field is required'

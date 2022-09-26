@@ -11,7 +11,7 @@ module.exports = {
      */
 
     getIndex: async(request, response) => {
-        const transactions = await Transaction.find().populate({path: 'person', select: '_id', select: 'name'})
+        const transactions = await Transaction.find().populate({path: 'person', select: '_id name state district'})
 
         try {            
             response.render('index', {

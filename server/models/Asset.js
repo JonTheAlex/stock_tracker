@@ -5,28 +5,22 @@ const assetSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Person',
     },
-    asset: {
-        type: String,
-    },
     asset_owner: {
         type: String,
     },
-    asset_income_type: {
+    asset_name: {
         type: String,
     },
-    asset_income: {
+    asset_ticker: {
         type: String,
     },
-    asset_taxable: {
-        type: Boolean,
-    },
-    income_source: {
+    asset_description: {
         type: String,
     },
-    income_type: {
+    asset_type: {
         type: String,
     },
-    income_amount: {
+    transaction_type: {
         type: String,
     },
     transaction_date: {

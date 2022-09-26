@@ -8,8 +8,8 @@
                     <tr>
                         <th>Name</th>
                         <th>State</th>
-                        <th>Owner</th>
                         <th>District</th>
+                        <th>Owner</th>
                         <th>Asset</th>
                         <th>Transaction Type</th>
                         <th>Notification Date</th>
@@ -20,8 +20,8 @@
                 <tbody>
                     <% transactions.forEach(transaction => { %>
                         <tr><td><a href='/person/<%= transaction.person._id %>'><%= transaction.person.name %></a></td>
-                            <td><%= transaction.state %></td>
-                            <td><%= transaction.district %></td>
+                            <td><%= transaction.person.state %></td>
+                            <td><%= transaction.person.district %></td>
                             <td><%= transaction.owner %></td>
                             <td><%= transaction.asset_name %></td>
                             <td><%= transaction.transaction_type %></td>
