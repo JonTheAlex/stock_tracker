@@ -40,9 +40,10 @@ const Person = require('../models/Person')
         try {
             await Asset.create({
               person: request.body.personAsset,
-              asset_name: request.body.asset_name,
-              asset_description: request.body.asset_description,
               asset_owner: request.body.asset_owner,
+              asset_name: request.body.asset_name,
+              asset_ticker: request.body.asset_ticker,
+              asset_description: request.body.asset_description,
               asset_value: request.body.asset_value,
               asset_income_type: request.body.asset_income_type,
               asset_income_amount: request.body.asset_income_amount,

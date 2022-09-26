@@ -17,10 +17,16 @@ const assetSchema = new mongoose.Schema({
     asset_description: {
         type: String,
     },
-    asset_type: {
+    asset_value: {
         type: String,
     },
-    transaction_type: {
+    asset_income_type: {
+        type: String,
+    },
+    asset_income_amount: {
+        type: String,
+    },
+    asset_transaction_type: {
         type: String,
     },
     transaction_date: {
