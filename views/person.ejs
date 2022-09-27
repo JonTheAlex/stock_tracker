@@ -18,7 +18,7 @@
 
 <h3>Stock Trades</h3>
 <div class="container-fluid">
-    <table id="transactionTable">
+    <table id="transactionTable" class="table table-striped">
         <thead>
             <tr>
                 <th>Name</th>
@@ -44,7 +44,7 @@
         </tbody> 
     </table>
     <h3>Assets</h3>
-    <table id="assetTable">
+    <table id="assetTable" class="table table-striped">
         <thead>
             <tr>
                 <th>Name</th>
@@ -80,17 +80,8 @@
 </div>
 
 <script>
-    const transactionTable = new simpleDatatables.DataTable("#transactionTable", {
-    sortable: true,
-    fixedHeight: true,
-    searchable: true
-    })
-
-    const assetTable = new simpleDatatables.DataTable("#assetTable", {
-        fixedHeight: true,
-    })
-    
-    const incomeTable = new simpleDatatables.DataTable("#earnedIncomeTable", {
-        fixedHeight: true,
-    })
+    $(document).ready(function () {
+        $('#transactionTable').DataTable();
+        $('#assetTable').DataTable();
+    });
 </script>
