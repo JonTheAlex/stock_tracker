@@ -60,7 +60,7 @@ const Person = require('../models/Person')
         }
     }
 
-    exports.getData = async (request, response) => {
+    exports.getPerson = async (request, response) => {
         try {
             const personData = await Person.find({}, 'name')
             let dropDown = {
