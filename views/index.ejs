@@ -1,43 +1,10 @@
-
-<h1>Most Recent Trades</h1>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-10">
-            <table id="transactionTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>State</th>
-                        <th>District</th>
-                        <th>Owner</th>
-                        <th>Asset</th>
-                        <th>Transaction Type</th>
-                        <th>Notification Date</th>
-                        <th>Transaction Date</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% transactions.forEach(transaction => { %>
-                        <tr><td><a href='/person/<%= transaction.person._id %>'><%= transaction.person.name %></a></td>
-                            <td><%= transaction.person.state %></td>
-                            <td><%= transaction.person.district %></td>
-                            <td><%= transaction.owner %></td>
-                            <td><%= transaction.asset_name %></td>
-                            <td><%= transaction.transaction_type %></td>
-                            <td><%= moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
-                            <td><%= moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
-                            <td><%= transaction.amount %></td>
-                        </tr>
-                    <% }) %>
-                </tbody> 
-            </table>
-        </div>
-        <div class="col-2 ">
+        <div class="col-md-12 col-lg-2">
             <section>
                 <div class="info-box">
                     <div class="update">
-                        <h2>Updates: </h2>
+                        <h3>Updates: </h3>
                         <p>Financial Trades from House and Senate Members</p>
                         <p>08/30/2021 - Successful connection of Mongodb to backend of website</p>
                         <p>Mickey Mouse is the first record</p>
@@ -69,16 +36,51 @@
                 </div>
             </section>
         </div>
+        <div class="col-md-12 col-lg-10">
+            <h1>Most Recent Trades</h1>
+            <table id="transactionTable">
+                <thead>
+                    <tr>
+                        <th style="width: 20%">Name</th>
+                        <th>State</th>
+                        <th>District</th>
+                        <th>Owner</th>
+                        <th>Asset</th>
+                        <th>Transaction Type</th>
+                        <th>Notification Date</th>
+                        <th>Transaction Date</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% transactions.forEach(transaction => { %>
+                        <tr><td><a href='/person/<%= transaction.person._id %>'><%= transaction.person.name %></a></td>
+                            <td><%= transaction.person.state %></td>
+                            <td><%= transaction.person.district %></td>
+                            <td><%= transaction.owner %></td>
+                            <td><%= transaction.asset_name %></td>
+                            <td><%= transaction.transaction_type %></td>
+                            <td><%= moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
+                            <td><%= moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
+                            <td><%= transaction.amount %></td>
+                        </tr>
+                    <% }) %>
+                </tbody> 
+            </table>
+        </div>
     </div>
 </div>
-<script>
+<script defer>
     const dataTable = new simpleDatatables.DataTable("#transactionTable", {
-    sortable: true,
-    fixedHeight: true,
-    searchable: true
-})
+        columns: [
+            {select: [2,3,6], hidden:true}
+        ],
+        searchable: true,
+        fixedHeight: true,
+        scrollY: true,
+        paging: false,
+    });
 </script>
-
 
 
     
