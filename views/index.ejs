@@ -70,23 +70,23 @@
                             <th>Value</th>
                             <th>Income Type(s)</th>
                             <th>Income amount</th>
-                            <th>Transaction Date</th>
                             <th>Notification Date</th>
+                            <th>Transaction Date</th>
                             <th>Amount</th>
                         </tr>
                     </thead>
                     <tbody>
                         <% assets.forEach(asset => { %>
                             <tr><td><a href='/person/<%= asset.person._id %>'><%= asset.person.name %></a></td>
-                                <td><%= asset.owner %></td>
+                                <td><%= asset.asset_owner %></td>
                                 <td><%= asset.asset_name %></td>
-                                <td><%= asset.ticker %></td>
-                                <td><%= asset.description %></td>
-                                <td><%= asset.value %></td>
-                                <td><%= asset.income_type %></td>
-                                <td><%= asset.income_amount %></td>
-                                <td><%= moment(asset.transaction_date).format("MM-DD-YYYY") %></td>
+                                <td><%= asset.asset_ticker %></td>
+                                <td><%= asset.asset_description %></td>
+                                <td><%= asset.asset_value %></td>
+                                <td><%= asset.asset_income_type %></td>
+                                <td><%= asset.asset_income_amount %></td>
                                 <td><%= moment(asset.notification_date).format("MM-DD-YYYY") %></td>
+                                <td><%= moment(asset.transaction_date).format("MM-DD-YYYY") %></td>
                                 <td><%= asset.amount %></td>
                             </tr>
                         <% }) %>
@@ -101,7 +101,11 @@
 </div>
 <script defer>
     $(document).ready(function () {
-    $('#dataTable').DataTable();
+    $('#dataTable').DataTable({
+        paging: false,
+        scrollY: 400,
+        searching: true
+    });
     });
 </script>
 

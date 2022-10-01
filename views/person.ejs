@@ -70,8 +70,8 @@
                     <td><%= asset.asset_value %></td>
                     <td><%= asset.asset_income_type %></td>
                     <td><%= asset.asset_income_amount %></td>
-                    <td><%= asset.notification_date %></td>
-                    <td><%= asset.transaction_date %></td>
+                    <td><%= moment(asset.notification_date).format("MM-DD-YYYY") %></td>
+                    <td><%= moment(asset.transaction_date).format("MM-DD-YYYY") %></td>
                     <td><%= asset.amount %></td>
                 </tr>
             <% }) %>

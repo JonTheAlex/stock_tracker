@@ -1,6 +1,7 @@
 const Transaction = require('../models/Transaction')
 const Person = require('../models/Person')
 const moment = require('moment')
+const Asset = require('../models/Asset')
 
 
 module.exports = {
@@ -12,7 +13,7 @@ module.exports = {
 
     getIndex: async(request, response) => {
         const transactions = await Transaction.find().populate({path: 'person', select: '_id name state district'})
-
+        const assets = await Asset.find().populate({path: 'person', select: '_id name'})
         try {            
             response.render('index', {
                 title:'Capital.IO', 
@@ -20,7 +21,7 @@ module.exports = {
                 layout:'./layouts/main', 
                 recordData: {},
                 transactions:transactions, 
-                assets: {},
+                assets: assets,
                 loginStatus: request.user
             })
         } catch (error) {
