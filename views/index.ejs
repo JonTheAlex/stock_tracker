@@ -27,7 +27,7 @@
         <div class="col col-lg-9">
             <div class="trades">
                 <h1>Most Recent Trades</h1>
-                <table id="dataTable" class="table table-striped">
+                <table id="" class="table table-striped">
                     <thead>
                         <tr>
                             <th style="width: 20%">Name</th>
@@ -59,7 +59,7 @@
             </div>
             <div class="assets">
                 <h1>Most Recent Assets</h1>
-                <table id="dataTable" class="table table-striped">
+                <table id="" class="table table-striped">
                     <thead>
                         <tr>
                             <th style="width: 20%">Name</th>
@@ -101,11 +101,9 @@
 </div>
 <script defer>
     $(document).ready(function () {
-    $('#dataTable').DataTable({
-        paging: false,
-        scrollY: 400,
-        searching: true
-    });
+    $('.table').DataTable({
+            scrollX: true
+        });
     });
 </script>
 
