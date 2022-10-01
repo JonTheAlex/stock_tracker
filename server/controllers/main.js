@@ -18,7 +18,9 @@ module.exports = {
                 title:'Capital.IO', 
                 moment:moment, 
                 layout:'./layouts/main', 
+                recordData: {},
                 transactions:transactions, 
+                assets: {},
                 loginStatus: request.user
             })
         } catch (error) {
