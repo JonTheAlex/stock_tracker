@@ -14,6 +14,8 @@
         <div class="col">
           <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">
         </div>
+      </div>
+      <div class="form-row">
         <div class="col">
           <input type="text" class="form-control" placeholder="Asset Name" id="asset_name" name="asset_name">
         </div>
@@ -23,6 +25,8 @@
         <div class="col">
           <input type="text" class="form-control" placeholder="Asset Description" id="asset_description" name="asset_description">
         </div>
+      </div>
+      <div class="form-row">
         <div class="col">
           <input type="text" class="form-control" placeholder="Asset Type" id="asset_type" name="asset_type">
         </div>
@@ -32,6 +36,8 @@
         <div class="col">
           <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
         </div>
+      </div>
+      <div class="form-row">
         <div class="col">
           <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_transaction_date" name="notification_transaction_date">
         </div>
@@ -54,17 +60,20 @@
   </form>
 </div>
 <h3>Asset Submission Form</h3>
-<form form action="/form/asset/" method="POST"> 
-    <div class="form-row">
-      <div class="col">
-        <label for="person-asset">Select Person:</label>
-        <select class="form-control person-select" name="personAsset" id="person-asset" placeholder="Person">
-          <option value="" disabled selected>Select Person</option>
-        </select>
-      </div>
+<div class="container">
+  <form form action="/form/asset/" method="POST"> 
+      <div class="form-row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">
+          <label for="person-asset">Select Person:</label>
+          <select class="form-control person-select" name="personAsset" id="person-asset" placeholder="Person">
+            <option value="" disabled selected>Select Person</option>
+          </select>
         </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">
+        </div>
+      </div>
+      <div class="form-row">
         <div class="col">
           <input type="text" class="form-control" placeholder="Asset Name" id="asset_name" name="asset_name">
         </div>
@@ -77,12 +86,16 @@
         <div class="col">
           <input type="text" class="form-control" placeholder="Income Type" id="asset_income_type" name="asset_income_type">
         </div>
+      </div>
+      <div class="form-row">
         <div class="col">
           <input type="text" class="form-control" placeholder="Income Amount" id="asset_income_amount" name="asset_income_amount">
         </div>
         <div class="col">
           <input type="text" class="form-control" placeholder="Transaction Type" id="asset_transaction_type" name="asset_transaction_type">
         </div>
+      </div>  
+      <div class="form-row">
         <div class="col">
           <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_asset_date" name="transaction_asset_date">
         </div>
@@ -103,9 +116,10 @@
             <option value="7">$5,000,001 - $25,000,000</option>
           </select>
         </div>
-    </div>
-    <button type="submit" class="btn btn-primary" id="asset-btn">Submit</button>
-</form>
+      </div>
+      <button type="submit" class="btn btn-primary" id="asset-btn">Submit</button>
+  </form>
+</div>
 
 <script>flatpickr('.calendar', {})</script>
 <script>
