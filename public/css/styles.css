@@ -5,3 +5,15 @@ body {
 p.record-data {
     text-align: center;
 }
+
+tbody {
+    font-size: 14px;
+}
+
+tbody > tr > td {
+    white-space: nowrap;
+}
+
+.trades {
+    padding-bottom: 50px;
+}
