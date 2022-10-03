@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const mainController = require('../controllers/main')
+const blogController = require('../controllers/blog')
 const authController = require('../controllers/auth')
 const personController = require('../controllers/person')
 
@@ -9,6 +10,8 @@ const personController = require('../controllers/person')
  */
 
 router.get('/', mainController.getIndex);
+router.get('/about', mainController.getAbout);
+router.get('/blog', blogController.getBlog);
 router.get('/signin', authController.getSignIn);
 router.post('/signin', authController.postSignIn)
 router.get('/signup', authController.getSignUp);

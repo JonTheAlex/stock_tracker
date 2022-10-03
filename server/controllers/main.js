@@ -27,6 +27,18 @@ module.exports = {
         } catch (error) {
             response.status(500).send({message: error.message})
         } 
+    },
+
+    getAbout: async(request, response) => {
+        try {
+            response.render('about', {
+                title:'Capital.IO',
+                layout:'./layouts/main',
+                loginStatus: request.user
+            })
+        } catch (error) {
+            response.status(500).send({message: error.message})
+        } 
     }
 }
 
