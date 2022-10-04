@@ -2,9 +2,15 @@ body {
     padding-top: 70px;
 }
 
-p.record-data {
+h3 {
     text-align: center;
 }
+
+img {
+    width: 100%;
+    height: auto;
+}
+
 
 tbody {
     font-size: 14px;
@@ -19,5 +25,13 @@ tbody > tr > td {
 }
 
 .top-buffer {
-    margin-top: 20%;
+    margin-top: 10%;
+}
+
+.bottom-buffer {
+    margin-bottom: 5%;
+}
+
+.center {
+    text-align: center;
 }
