@@ -17,3 +17,7 @@ tbody > tr > td {
 .trades {
     padding-bottom: 50px;
 }
+
+.top-buffer {
+    margin-top: 20%;
+}
