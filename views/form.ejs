@@ -1,0 +1,165 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<h3>Transaction Submission Form</h3>
+<div class="container">
+  <form action="/form/transaction/" method="POST">
+      <div class="form-row">
+        <div class="col">
+          <label for="person-transaction">Select Person:</label>
+          <select class="form-control person-select" name="personTransaction" id="person-transaction" placeholder="Person">
+            <option value="" disabled selected>Select Person</option>
+          </select>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Asset Name" id="asset_name" name="asset_name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Asset Ticker" id="asset_ticker" name="asset_ticker">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Asset Description" id="asset_description" name="asset_description">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Asset Type" id="asset_type" name="asset_type">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Transaction Type" id="transaction_type" name="transaction_type">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_transaction_date" name="notification_transaction_date">
+        </div>
+        <div class="col">
+          <label for="transaction-amount">Select Amount:</label>
+          <select class="form-control" id="transaction-amount" name="amountTransaction" placeholder="Amount">
+            <option value="" disabled selected>Select Amount</option>
+            <option value="0">$0 - $15,000</option>
+            <option value="1">$15,001 - $50,000</option>
+            <option value="2">$50,001 - $100,000</option>
+            <option value="3">$100,001 - $250,000</option>
+            <option value="4">$250,000 - $500,000</option>
+            <option value="5">$500,001 - $1,000,000</option>
+            <option value="6">$1,000,001 - $5,000,000</option>
+            <option value="7">$5,000,001 - $25,000,000</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" id="transaction-btn">Submit</button>
+  </form>
+</div>
+<h3>Asset Submission Form</h3>
+<div class="container">
+  <form form action="/form/asset/" method="POST"> 
+      <div class="form-row">
+        <div class="col">
+          <label for="person-asset">Select Person:</label>
+          <select class="form-control person-select" name="personAsset" id="person-asset" placeholder="Person">
+            <option value="" disabled selected>Select Person</option>
+          </select>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Asset Name" id="asset_name" name="asset_name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Asset Description" id="asset_description" name="asset_description">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Asset Value" id="asset_value" name="asset_value">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Income Type" id="asset_income_type" name="asset_income_type">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Income Amount" id="asset_income_amount" name="asset_income_amount">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Transaction Type" id="asset_transaction_type" name="asset_transaction_type">
+        </div>
+      </div>  
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_asset_date" name="transaction_asset_date">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_asset_date" name="notification_asset_date">
+        </div>
+        <div class="col">
+          <label for="asset-amount">Select Amount:</label>
+          <select class="form-control" id="asset-amount" name="amountAsset" placeholder="Amount">
+            <option value="" disabled selected>Select Amount</option>
+            <option value="0">$0 - $15,000</option>
+            <option value="1">$15,001 - $50,000</option>
+            <option value="2">$50,001 - $100,000</option>
+            <option value="3">$100,001 - $250,000</option>
+            <option value="4">$250,000 - $500,000</option>
+            <option value="5">$500,001 - $1,000,000</option>
+            <option value="6">$1,000,001 - $5,000,000</option>
+            <option value="7">$5,000,001 - $25,000,000</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" id="asset-btn">Submit</button>
+  </form>
+</div>
+
+<script>flatpickr('.calendar', {})</script>
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('/form/data', {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'},
+        })
+        
+        const dropDownData = await response.json()
+        populateDropDown(dropDownData)
+
+    } catch(error){
+        console.log(error)
+    }
+})
+
+function populateDropDown(dropDownData){
+    persons_select = document.querySelectorAll('.person-select')
+    states_select = document.querySelectorAll('.state-select')
+    const persons = dropDownData.persons
+    const states = dropDownData.states
+
+    persons_select.forEach((person_select) => {
+        persons.forEach((person) => {
+            let option = document.createElement('option')
+            option.value = person._id
+            option.innerHTML = person.name
+            person_select.append(option)
+        })
+    })
+
+    states_select.forEach((state_select) => {
+        states.forEach((state) => {
+            let option = document.createElement('option')
+            option.value = state.abbreviation
+            option.innerHTML = state.name
+            state_select.append(option)
+        })
+    })
+}
+</script>

@@ -1,0 +1,37 @@
+body {
+    padding-top: 70px;
+}
+
+h3 {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+tbody {
+    font-size: 14px;
+}
+
+tbody > tr > td {
+    white-space: nowrap;
+}
+
+.trades {
+    padding-bottom: 50px;
+}
+
+.top-buffer {
+    margin-top: 5%;
+}
+
+.bottom-buffer {
+    margin-bottom: 5%;
+}
+
+.center {
+    text-align: center;
+}

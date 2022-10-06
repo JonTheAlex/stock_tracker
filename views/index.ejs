@@ -1,82 +1,112 @@
-
-<h1>Most Recent Trades</h1>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-10">
-            <table id="transactionTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>State</th>
-                        <th>Owner</th>
-                        <th>District</th>
-                        <th>Asset</th>
-                        <th>Transaction Type</th>
-                        <th>Notification Date</th>
-                        <th>Transaction Date</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% transactions.forEach(transaction => { %>
-                        <tr><td><%=transaction.name %></td>
-                            <td><%=transaction.state %></td>
-                            <td><%=transaction.district %></td>
-                            <td><%=transaction.owner %></td>
-                            <td><%=transaction.asset_name %></td>
-                            <td><%=transaction.transaction_type %></td>
-                            <td><%=moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
-                            <td><%=moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
-                            <td><%=transaction.amount %></td>
-                        </tr>
-                    <% }) %>
-                </tbody> 
-            </table>
+        <div class="col col-lg-3">
+            <div class="container update">
+                <h4>Updates <i class="bi bi-megaphone"></i></h4>
+                <p>Financial Trades from House and Senate Members</p>
+                <p><i class="bi bi-eyeglasses"></i> A Collection of Records Compiled by a Dedicated Group of 
+                    Individuals aspiring for Transparency in Government
+                </p>
+                <h4>For More Updates: </h4>
+                <!-- Twitter -->
+                <h6><a href="#!"><i class="bi bi-twitter"></i> Capital.IO</a></h6>
+                <!-- Reddit -->
+                <a href="#"><i class="bi bi-reddit"></i> Capital.IO</a>
+            </div>
+            <div class="container text website-data">
+                    <p class="center">Trades at a Glance</p>
+                    <p class="center">Updated <%= recordData.updated %> minutes ago</p>
+                    <p class="center"><%= recordData.totalRecords %></p>
+                    <p class="center">Records Gathered</p>
+                    <p class="center"><%= recordData.totalValue %></p>
+                    <p class="center">Total Value Traded</p>
+                    <p class="center"><%= recordData.totalReturn %></p>
+                    <p class="center">Total % Return</p>
+            </div> 
         </div>
-        <div class="col-2 ">
-            <section>
-                <div class="info-box">
-                    <div class="update">
-                        <h2>Updates: </h2>
-                        <p>Financial Trades from House and Senate Members</p>
-                        <!-- Twitter -->
-                        <a href="#!"><i class="bi bi-twitter"></i></a>
-                        <!-- Instagram -->
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <!-- Reddit -->
-                        <a href="#"><i class="bi bi-reddit"></i></a>
-                    </div>
-                    <div class="website-data">
-                        <div class="website-glance">
-                            <h3>Trades at a Glance</h3>
-                            <h6>Updated [X] minutes ago</h6>
-                        </div>
-                        <div class="records-count">
-                            <h4>XX,XXX</h4>
-                            <h6>Records Gathered</h6>
-                        </div>
-                        <div class="total-value">
-                            <h4>$XXX,XXX</h4>
-                            <h6>Total Value Traded</h6>
-                        </div>
-                        <div class="total-percent">
-                            <h4>XX.XX%</h4>
-                            <h6>Total % Return</h6>
-                        </div>
-                    </div>  
-                </div>
-            </section>
+        <div class="col col-lg-9">
+            <div class="trades">
+                <h1>Most Recent Trades</h1>
+                <table id="" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%">Name</th>
+                            <th>State</th>
+                            <th>District</th>
+                            <th>Owner</th>
+                            <th>Asset</th>
+                            <th>Transaction Type</th>
+                            <th>Notification Date</th>
+                            <th>Transaction Date</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% transactions.forEach(transaction => { %>
+                            <tr><td><a href='/person/<%= transaction.person._id %>'><%= transaction.person.name %></a></td>
+                                <td><%= transaction.person.state %></td>
+                                <td><%= transaction.person.district %></td>
+                                <td><%= transaction.owner %></td>
+                                <td><%= transaction.asset_name %></td>
+                                <td><%= transaction.transaction_type %></td>
+                                <td><%= moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
+                                <td><%= moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
+                                <td><%= transaction.amount %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody> 
+                </table>
+            </div>
+            <div class="assets">
+                <h1>Most Recent Assets</h1>
+                <table id="" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%">Name</th>
+                            <th>Owner</th>
+                            <th>Asset</th>
+                            <th>Ticker</th>
+                            <th>Description</th>
+                            <th>Value</th>
+                            <th>Income Type(s)</th>
+                            <th>Income amount</th>
+                            <th>Notification Date</th>
+                            <th>Transaction Date</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% assets.forEach(asset => { %>
+                            <tr><td><a href='/person/<%= asset.person._id %>'><%= asset.person.name %></a></td>
+                                <td><%= asset.asset_owner %></td>
+                                <td><%= asset.asset_name %></td>
+                                <td><%= asset.asset_ticker %></td>
+                                <td><%= asset.asset_description %></td>
+                                <td><%= asset.asset_value %></td>
+                                <td><%= asset.asset_income_type %></td>
+                                <td><%= asset.asset_income_amount %></td>
+                                <td><%= moment(asset.notification_date).format("MM-DD-YYYY") %></td>
+                                <td><%= moment(asset.transaction_date).format("MM-DD-YYYY") %></td>
+                                <td><%= asset.amount %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody> 
+                </table>
+            </div>
         </div>
     </div>
 </div>
 <script>
-    const dataTable = new simpleDatatables.DataTable("#transactionTable", {
-    sortable: true,
-    fixedHeight: true,
-    searchable: true
-})
+    $(document).ready(function () {
+    $('.table').DataTable({
+            scrollX: true,
+            scrollY: true,
+            lengthChange: false,
+            searching: false,
+            paging: false
+        });
+    });
 </script>
-
 
 
     
