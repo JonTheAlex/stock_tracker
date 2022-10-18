@@ -21,8 +21,9 @@
         </div>
     </div>
     <div class="row">
+        <h3>Stock Trades</h3>
         <div class="col">
-            <h3>Stock Trades</h3>
+            
             <table id="" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
@@ -51,8 +52,9 @@
         </div>
     </div>
     <div class="row">
+        <h3>Assets</h3>
         <div class="col">
-            <h3>Assets</h3>
+            
             <table id="" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
@@ -93,11 +95,12 @@
 <script>
     $(document).ready(function () {
         $('.table').DataTable({
-            searching: false,
-            scrollX: true,
-            scrollY: true,
-            lengthChange: false,
-            paging: false
+            'scrollX': true,
+            'scrollY': true,
+            'info':false,
+            'searching': false,
+            'lengthChange': false,
+            'paging': false
         })
     });
 </script>
