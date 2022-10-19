@@ -1,5 +1,6 @@
 body {
     padding-top: 70px;
+    
 }
 
 h3 {
@@ -34,4 +35,16 @@ tbody > tr > td {
 
 .center {
     text-align: center;
+}
+
+.border {
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 2%;
+}
+
+.border-table {
+    border-radius: 10px;
+    margin-bottom: 2%;
+    padding: 2%;
 }
