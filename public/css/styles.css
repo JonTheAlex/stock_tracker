@@ -48,3 +48,9 @@ tbody > tr > td {
     margin-bottom: 2%;
     padding: 2%;
 }
+
+.border-img {
+     border-radius: 10px;
+     margin-bottom: 2%;
+     padding: 2%
+}
