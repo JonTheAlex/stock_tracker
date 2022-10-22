@@ -14,7 +14,7 @@
                 <a href="#"><i class="bi bi-reddit"></i> Capital.IO</a>
             </div>
             <div class="container text website-data border">
-                    <p class="center">Trades at a Glance</p>
+                    <h5 class="center">Trades at a Glance</h5>
                     <p class="center">Updated <%= recordData.updated %> minutes ago</p>
                     <p class="center"><%= recordData.totalRecords %></p>
                     <p class="center">Records Gathered</p>
@@ -25,7 +25,7 @@
             </div> 
         </div>
         <div class="col col-lg-9">
-            <div class="trades border border-table">
+            <div class="border">
                 <h1>Most Recent Trades</h1>
                 <table id="" class="table table-striped">
                     <thead>
@@ -57,7 +57,7 @@
                     </tbody> 
                 </table>
             </div>
-            <div class="assets border border-table">
+            <div class="border">
                 <h1>Most Recent Assets</h1>
                 <table id="" class="table table-striped">
                     <thead>
@@ -96,6 +96,7 @@
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function () {
     $('.table').DataTable({

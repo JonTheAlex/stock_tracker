@@ -1,6 +1,13 @@
+:root {
+    --black: #121917;
+    --forest-green: #33413d;
+    --med-grey: #9fa4a3;
+    --lite-grey: #d6d9d9;
+    --dark-grey: #7a8182;
+}
+
 body {
     padding-top: 70px;
-    
 }
 
 h3 {
@@ -12,17 +19,12 @@ img {
     height: auto;
 }
 
-
 tbody {
     font-size: 14px;
 }
 
 tbody > tr > td {
     white-space: nowrap;
-}
-
-.trades {
-    padding-bottom: 50px;
 }
 
 .top-buffer {
@@ -40,12 +42,6 @@ tbody > tr > td {
 .border {
     border-radius: 10px;
     margin-bottom: 5%;
-    padding: 2%;
-}
-
-.border-table {
-    border-radius: 10px;
-    margin-bottom: 2%;
     padding: 2%;
 }
 
