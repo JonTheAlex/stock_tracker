@@ -19,12 +19,21 @@ img {
     height: auto;
 }
 
+span {
+    margin-left:10.5%;
+}
+
 tbody {
     font-size: 14px;
 }
 
 tbody > tr > td {
     white-space: nowrap;
+}
+
+.social-media {
+    display: inline-block;
+    min-width: 100%;
 }
 
 .top-buffer {
