@@ -1,103 +1,100 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="data-container card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src=<%= person.image %> class="img-fluid rounded-start" alt=<% person.name %> >
+                        <img src=<%= person.image %> class="img-fluid rounded-start border-img" alt=<% person.name %> >
                     </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Name: <%= person.name %></h5>
-                        <p class="card-text">Position: <%= person.position %></p>
-                        <p class="card-text">State: <%= person.state %></p>
-                        <p class="card-text">District: <%= person.district %></p>
-                        <p class="card-text">Party: <%= person.party %></p>
-                        <p class="card-text">Chamber: <%= person.chamber %></p>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Name: <%= person.name %></h5>
+                            <p class="card-text">Position: <%= person.position %></p>
+                            <p class="card-text">State: <%= person.state %></p>
+                            <p class="card-text">District: <%= person.district %></p>
+                            <p class="card-text">Party: <%= person.party %></p>
+                            <p class="card-text">Chamber: <%= person.chamber %></p>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <h3>Stock Trades</h3>
-            <table id="" class="table table-striped" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Owner</th>
-                        <th>Asset</th>
-                        <th>Transaction Type</th>
-                        <th>Notification Date</th>
-                        <th>Transaction Date</th>
-                        <th>Amount</th>
+    <div class="data-container border">
+        <h3>Stock Trades</h3>
+        <table id="" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Owner</th>
+                    <th>Asset</th>
+                    <th>Transaction Type</th>
+                    <th>Notification Date</th>
+                    <th>Transaction Date</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% transactions.forEach(transaction => { %>
+                    <tr><td><%= person.name %></td>
+                        <td><%= transaction.owner %></td>
+                        <td><%= transaction.asset_name %></td>
+                        <td><%= transaction.transaction_type %></td>
+                        <td><%= moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
+                        <td><%= moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
+                        <td><%= transaction.amount %></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <% transactions.forEach(transaction => { %>
-                        <tr><td><%= person.name %></a></td>
-                            <td><%= transaction.owner %></td>
-                            <td><%= transaction.asset_name %></td>
-                            <td><%= transaction.transaction_type %></td>
-                            <td><%= moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
-                            <td><%= moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
-                            <td><%= transaction.amount %></td>
-                        </tr>
-                    <% }) %>
-                </tbody> 
-            </table>
-        </div>
+                <% }) %>
+            </tbody> 
+        </table>
     </div>
-    <div class="row">
-        <div class="col">
-            <h3>Assets</h3>
-            <table id="" class="table table-striped" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Owner</th>
-                        <th>Asset</th>
-                        <th>Ticker</th>
-                        <th>Description</th>
-                        <th>Value</th>
-                        <th>Income Type(s)</th>
-                        <th>Income Amount</th>
-                        <th>Notification Date</th>
-                        <th>Transaction Date</th>
-                        <th>Amount</th>
+    <div class="data-container border">
+        <h3>Assets</h3>
+        <table id="" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Owner</th>
+                    <th>Asset</th>
+                    <th>Ticker</th>
+                    <th>Description</th>
+                    <th>Value</th>
+                    <th>Income Type(s)</th>
+                    <th>Income Amount</th>
+                    <th>Notification Date</th>
+                    <th>Transaction Date</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% assets.forEach(asset => { %>
+                    <tr><td><%= person.name %></td>
+                        <td><%= asset.asset_owner %></td>
+                        <td><%= asset.asset_name %></td>
+                        <td><%= asset.asset_ticker %></td>
+                        <td><%= asset.asset_description %></td>
+                        <td><%= asset.asset_value %></td>
+                        <td><%= asset.asset_income_type %></td>
+                        <td><%= asset.asset_income_amount %></td>
+                        <td><%= moment(asset.notification_date).format("MM-DD-YYYY") %></td>
+                        <td><%= moment(asset.transaction_date).format("MM-DD-YYYY") %></td>
+                        <td><%= asset.amount %></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <% assets.forEach(asset => { %>
-                        <tr><td><%= person.name %></td>
-                            <td><%= asset.asset_owner %></td>
-                            <td><%= asset.asset_name %></td>
-                            <td><%= asset.asset_ticker %></td>
-                            <td><%= asset.asset_description %></td>
-                            <td><%= asset.asset_value %></td>
-                            <td><%= asset.asset_income_type %></td>
-                            <td><%= asset.asset_income_amount %></td>
-                            <td><%= moment(asset.notification_date).format("MM-DD-YYYY") %></td>
-                            <td><%= moment(asset.transaction_date).format("MM-DD-YYYY") %></td>
-                            <td><%= asset.amount %></td>
-                        </tr>
-                    <% }) %>
-                </tbody> 
-            </table>
-        </div>
+                <% }) %>
+            </tbody> 
+        </table>
     </div>
 </div>
 
 <script>
     $(document).ready(function () {
         $('.table').DataTable({
-            searching: false,
-            scrollX: true,
-            scrollY: true,
-            lengthChange: false,
-            paging: false
+            'scrollX': true,
+            'scrollY': true,
+            'info':false,
+            'searching': false,
+            'lengthChange': false,
+            'paging': false
         })
     });
 </script>

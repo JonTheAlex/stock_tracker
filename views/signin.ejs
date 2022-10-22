@@ -49,9 +49,10 @@
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+  
 </style>
-<body class="text-center">
-  <main class="form-signin w-100 m-auto">
+<body class="text-center" style="background-color:#33413d">
+  <main class="form-signin w-100 m-auto border" style="background-color: #d6d9d9">
     <form action="/signin" method="POST" >
       <img src="" alt="" class="mb-4">
         <h1 class="mb-3 fw-normal">Sign In</h1>
@@ -63,9 +64,9 @@
             <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Password</label>
           </div>
-          <button class="w-100 mb-3 btn btn-lg btn-primary" type="submit">Sign in</button>
+          <button class="w-100 mb-3 btn btn-lg" type="submit" style="background-color: #63A3B6; color: #EEEEEE">Sign in</button>
     </form>
-    <a href="/signup" class="w-100 mb-3 btn btn-lg btn-primary" role="button">No Account? Sign up</a>
+    <a href="/signup" class="w-100 mb-3 btn btn-lg" role="button" style="background-color: #63A3B6; color: #EEEEEE;">No Account? Sign up</a>
     <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
   </main>
 </body>

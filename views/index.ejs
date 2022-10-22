@@ -1,20 +1,24 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col col-lg-3">
-            <div class="container update">
+    <div class="row m-0">
+        <div class="col col-lg-2">
+            <div class="container data-container border">
                 <h4>Updates <i class="bi bi-megaphone"></i></h4>
                 <p>Financial Trades from House and Senate Members</p>
                 <p><i class="bi bi-eyeglasses"></i> A Collection of Records Compiled by a Dedicated Group of 
                     Individuals aspiring for Transparency in Government
                 </p>
                 <h4>For More Updates: </h4>
-                <!-- Twitter -->
-                <h6><a href="#!"><i class="bi bi-twitter"></i> Capital.IO</a></h6>
-                <!-- Reddit -->
-                <a href="#"><i class="bi bi-reddit"></i> Capital.IO</a>
+                
+                <div class="social-media">
+                    <!-- Twitter -->
+                    <span class="social"><a href="#!"><i class="bi bi-twitter"></i> CapitalTrades</a></span>
+                    <!-- Reddit -->
+                    <span class="social"><a href="#"><i class="bi bi-reddit"></i> CapitalTrades</a></span>
+                </div>
+                
             </div>
-            <div class="container text website-data">
-                    <p class="center">Trades at a Glance</p>
+            <div class="container data-container border">
+                    <h5 class="center">Trades at a Glance</h5>
                     <p class="center">Updated <%= recordData.updated %> minutes ago</p>
                     <p class="center"><%= recordData.totalRecords %></p>
                     <p class="center">Records Gathered</p>
@@ -24,8 +28,8 @@
                     <p class="center">Total % Return</p>
             </div> 
         </div>
-        <div class="col col-lg-9">
-            <div class="trades">
+        <div class="col col-lg-10">
+            <div class="data-container border">
                 <h1>Most Recent Trades</h1>
                 <table id="" class="table table-striped">
                     <thead>
@@ -57,7 +61,7 @@
                     </tbody> 
                 </table>
             </div>
-            <div class="assets">
+            <div class="data-container border">
                 <h1>Most Recent Assets</h1>
                 <table id="" class="table table-striped">
                     <thead>
@@ -96,14 +100,16 @@
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function () {
     $('.table').DataTable({
-            scrollX: true,
-            scrollY: true,
-            lengthChange: false,
-            searching: false,
-            paging: false
+            'scrollX': true,
+            'scrollY': true,
+            'info': false,
+            'lengthChange': false,
+            'searching': false,
+            'paging': false
         });
     });
 </script>
