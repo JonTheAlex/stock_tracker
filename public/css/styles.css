@@ -33,18 +33,6 @@ img {
     height: auto;
 }
 
-span {
-    background-color: #63A3B6;
-    border-radius: 5%;
-    padding: 1%;
-    margin-left: 1px;
-
-}
-
-span:hover {
-    background-color: #93bfcc;
-}
-
 span a {
     color: #EEEEEE;
     text-decoration: none;
@@ -74,6 +62,18 @@ tbody > tr > td {
 .social-media {
     display: inline-block;
     min-width: 100%;
+}
+
+.social-media span {
+    background-color: #63A3B6;
+    border-radius: 5%;
+    padding: 1%;
+    margin-left: 1px;
+
+}
+
+.social-media span:hover {
+    background-color: #93bfcc;
 }
 
 .top-buffer {
