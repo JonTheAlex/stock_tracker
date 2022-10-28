@@ -33,7 +33,7 @@ img {
     height: auto;
 }
 
-span {
+.social-media span {
     background-color: #63A3B6;
     border-radius: 5%;
     padding: 1%;
@@ -41,7 +41,7 @@ span {
 
 }
 
-span:hover {
+.social-media span:hover {
     background-color: #93bfcc;
 }
 
