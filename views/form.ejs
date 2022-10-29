@@ -8,14 +8,20 @@
     <form action="/form/transaction/" method="POST">
       <div class="row mb-1">
         <div class="col">
-          <select class="form-control person-select" name="personTransaction" id="person-transaction" placeholder="Person">
+          <select class="form-control person-select" name="person_transaction" id="person_transaction">
             <option value="" disabled selected>Select Person</option>
           </select>
         </div>
       </div>
       <div class="row mb-1">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">
+          <select class="form-control" id="asset_owner" name="asset_owner">
+            <option value="" disabled selected>Asset Owner</option>
+            <option value="0">Self</option>
+            <option value="1">JT</option>
+            <option value="2">SP</option>
+            <option value="3">DC</option>
+          </select>
         </div>
       </div>
       <div class="row mb-1">
@@ -35,7 +41,29 @@
       </div>
       <div class="row mb-1">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Transaction Type" id="transaction_type" name="transaction_type">
+          <select class="form-control" id="asset_type" name="asset_type">
+            <option value="" disabled selected>Select Asset Type</option>
+            <option value="0">Stocks</option>
+            <option value="1">Bonds</option>
+            <option value="2">US Treasury Securities</option>
+            <option value="3">REIT</option>
+            <option value="4">Options/Futures</option>
+            <option value="5">529 Stocks/Bonds</option>
+            <option value="6">Hedge/Private Equity Funds</option>
+            <option value="7">Cryptocurrencies</option>
+            <option value="8">Life Insurance Policies/Annuities</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-1">
+        <div class="col">
+          <select class="form-control" id="transaction_type" name="transaction_type">
+            <option value="" disabled selected>Select Transaction Type</option>
+            <option value="0">P</option>
+            <option value="1">S</option>
+            <option value="2">PS</option>
+            <option value="3">E</option>
+          </select>
         </div>
       </div>
       <div class="row mb-1">
@@ -50,7 +78,7 @@
       </div>
       <div class="row mb-1">
         <div class="col">
-          <select class="form-control" id="transaction-amount" name="amountTransaction" placeholder="Amount">
+          <select class="form-control" id="transaction_amount" name="transaction_amount">
             <option value="" disabled selected>Select Amount</option>
             <option value="0">$0 - $15,000</option>
             <option value="1">$15,001 - $50,000</option>
@@ -60,25 +88,34 @@
             <option value="5">$500,001 - $1,000,000</option>
             <option value="6">$1,000,001 - $5,000,000</option>
             <option value="7">$5,000,001 - $25,000,000</option>
+            <option value="7">$25,000,001 - $50,000,000</option>
+            <option value="7">$50,000,000+</option>
           </select>
         </div>
       </div>
       <button type="submit" class="" id="transaction-btn">Submit</button>
     </form>
   </div>
+
   <div class="data-container border">
     <h3>Asset Submission Form</h3>
       <form form action="/form/asset/" method="POST"> 
         <div class="row mb-1">
           <div class="col">
-            <select class="form-control person-select" name="personAsset" id="person-asset" placeholder="Person">
+            <select class="form-control person-select" name="person_asset" id="person_asset">
               <option value="" disabled selected>Select Person</option>
             </select>
           </div>
         </div>
         <div class="row mb-1">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">            
+          <div class="col">           
+            <select class="form-control" id="asset_owner" name="asset_owner">
+              <option value="" disabled selected>Asset Owner</option>
+              <option value="0">Self</option>
+              <option value="1">JT</option>
+              <option value="2">SP</option>
+              <option value="3">DC</option>
+            </select>
           </div>
         </div>
         <div class="row mb-1">
@@ -98,7 +135,47 @@
         </div>
         <div class="row mb-1">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Income Type" id="asset_income_type" name="asset_income_type">
+            <select class="form-control" id="asset_type" name="asset_type">
+              <option value="" disabled selected>Select Asset Type</option>
+              <option value="0">Real Property</option>
+              <option value="1">Farms</option>
+              <option value="2">Asset/Brokerage</option>
+              <option value="3">Asset/IRA/401K/NonFedRetAcct</option>
+              <option value="4">Pension</option>
+              <option value="5">529 College Savings Account</option>
+              <option value="6">Corporate Security</option>
+              <option value="7">Mutual Fund/ETF/REIT</option>
+              <option value="8">Govt Sec/Agency Debt</option>
+              <option value="9">Asset Backed Security</option>
+              <option value="10">Futures/Options</option>
+              <option value="11">HedgeFund/PE</option>
+              <option value="12">Cryptocurrency</option>
+              <option value="13">Annuity</option>
+              <option value="14">Insurance Policy</option>
+              <option value="15">Bank Account</option>
+              <option value="16">Insurance Policy</option>
+              <option value="17">Business Interest</option>
+              <option value="18">Debts Owed to Filer</option>
+              <option value="19">Trusts</option>
+              <option value="20">Investment Clubs</option>
+              <option value="21">Collectibles</option>
+              <option value="22">Intellectual Property/Royalties</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col">
+            <select class="form-control" id="asset_income_type" name="asset_income_type">
+              <option value="" disabled selected>Select Income Type</option>
+              <option value="0">Dividends</option>
+              <option value="1">Interest</option>
+              <option value="2">Capital Gains</option>
+              <option value="3">Rent</option>
+              <option value="4">Royalties</option>
+              <option value="5">Business Interest</option>
+              <option value="6">Estate/Trust</option>
+              <option value="7">Debt Discharge</option>
+            </select>
           </div>
         </div>
         <div class="row mb-1">
@@ -108,7 +185,13 @@
         </div>
         <div class="row mb-1">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Transaction Type" id="asset_transaction_type" name="asset_transaction_type">
+            <select class="form-control" id="asset_transaction_type" name="asset_transaction_type">
+              <option value="" disabled selected>Select Transaction Type</option>
+              <option value="0">P</option>
+              <option value="1">S</option>
+              <option value="2">PS</option>
+              <option value="3">E</option>
+            </select>
           </div>
         </div>
         <div class="row mb-1">
@@ -123,7 +206,7 @@
         </div>
         <div class="row mb-1">
           <div class="col">
-            <select class="form-control" id="asset-amount" name="amountAsset" placeholder="Amount">
+            <select class="form-control" id="asset_amount" name="amount_asset">
               <option value="" disabled selected>Select Amount</option>
               <option value="0">$0 - $15,000</option>
               <option value="1">$15,001 - $50,000</option>
@@ -133,6 +216,8 @@
               <option value="5">$500,001 - $1,000,000</option>
               <option value="6">$1,000,001 - $5,000,000</option>
               <option value="7">$5,000,001 - $25,000,000</option>
+              <option value="7">$25,000,001 - $50,000,000</option>
+              <option value="7">$50,000,000+</option>
             </select>
           </div>
         </div>
