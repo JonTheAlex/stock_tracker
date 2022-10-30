@@ -11,6 +11,7 @@ const connectDB = require('./config/database')
 const expressLayouts = require('express-ejs-layouts')
 const mainRoutes = require('./server/routes/main')
 const formRoutes = require('./server/routes/form')
+const postsRoutes = require('./server/routes/posts')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -46,6 +47,7 @@ app.use(passport.session())
 app.use(flash())
 
 app.use('/', mainRoutes)
+app.use('/blog', postsRoutes)
 app.use('/form', formRoutes)
 
 //PORT = 8000
