@@ -43,7 +43,7 @@ module.exports = {
                 content: request.body.content
             })
             console.log('Post Created')
-            response.redirect('/postForm')
+            response.redirect('/form')
         } catch (error) {
             console.log(error)
             console.log('Post Creation Failed')
