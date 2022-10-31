@@ -13,10 +13,6 @@ const postSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-    },
     posted_by: {
         type: String,
         required: true
