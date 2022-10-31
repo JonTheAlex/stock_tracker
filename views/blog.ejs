@@ -15,30 +15,14 @@
                 <div class="card">
                     <div class="card-body">
                       <h5 class="card-title"><%= post.title %></h5>
-                      <p class="card-text"><%= post.content.slice(0,91) + '...' %></p>
-                      <a href="/blog/<%= post._id %>" class="btn btn-primary">Goto Post</a>
+                      <p class="card-text mb-1"><%= post.content.slice(0,91) + '...' %></p>
+                      <p class="card-text  mb-0"><small class="text-muted"><%= moment(post.post_date).format("dddd, MMMM DD, YYYY") %></small></p>
+                      <p class="card-text"><small class="text-muted">Posted by: <%= post.posted_by %></small></p>
+                      <a href="/blog/<%= post._id %>" class="btn btn-primary">Read More</a>
                     </div>
                   </div>
             </div>
         <% }) %>
     </div>
-        <!-- <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div> -->
 </div>
 

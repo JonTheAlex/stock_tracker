@@ -1,4 +1,5 @@
 const Post = require('../models/Post')
+const moment = require('moment')
 
 
 module.exports = {
@@ -8,6 +9,7 @@ module.exports = {
             response.render('blog', {
                 title:'Capital.IO', 
                 layout:'./layouts/main', 
+                moment: moment,
                 loginStatus: request.user,
                 posts: posts
             })
@@ -36,11 +38,11 @@ module.exports = {
     createPost: async(request, response) => {
         try {
             await Post.create({
-                title: request.body.title,
-                image: request.body.image,
+                title: request.body.post_title,
+                image: request.body.post_image,
                 post_date: request.body.post_date,
-                user: request.body.user,
-                content: request.body.content
+                posted_by: request.body.user_name,
+                content: request.body.textarea,
             })
             console.log('Post Created')
             response.redirect('/form')
