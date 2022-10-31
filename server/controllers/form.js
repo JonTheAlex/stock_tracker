@@ -62,7 +62,7 @@ const Person = require('../models/Person')
 
     exports.getPerson = async (request, response) => {
         try {
-            const personData = await Person.find({}, 'name')
+            const personData = await Person.find({}, 'name').sort({name:1})
             let dropDown = {
                 'persons': personData,
                 'updated': Date.now()
