@@ -37,6 +37,10 @@ const assetSchema = new mongoose.Schema({
     },
     asset_amount: {
         type: String,
+    },
+    created_at: {
+        type: Date,
+        default: Date.now
     }
 });
 

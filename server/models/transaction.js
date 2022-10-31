@@ -40,6 +40,10 @@ const transactionSchema = new mongoose.Schema({
     transaction_amount: {
         type: String,
         required: 'This field is required'
+    },
+    created_at: {
+        type: Date,
+        default: Date.now
     }
 });
 
