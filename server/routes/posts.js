@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const {ensureAuth, ensureAdmin} = require('../../middleware/auth')
-const postsController = require('../controllers/post')
+const postsController = require('../controllers/posts')
 
-router.get('/blog', postsController.getBlog);
-router.get('/blog/:id', postsController.getPost);
-router.post('/blog/createPost', ensureAuth, ensureAdmin, postsController.createPost)
+router.get('/', postsController.getBlog);
+router.get('/:id', postsController.getPost);
+router.post('/createPost', ensureAuth, ensureAdmin, postsController.createPost)
 
 module.exports = router
 

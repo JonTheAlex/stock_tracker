@@ -34,6 +34,19 @@ module.exports = {
     },
 
     createPost: async(request, response) => {
-        
+        try {
+            await Post.create({
+                title: request.body.title,
+                image: request.body.image,
+                post_date: request.body.post_date,
+                user: request.body.user,
+                content: request.body.content
+            })
+            console.log('Post Created')
+            response.redirect('/postForm')
+        } catch (error) {
+            console.log(error)
+            console.log('Post Creation Failed')
+        }
     }
 }
