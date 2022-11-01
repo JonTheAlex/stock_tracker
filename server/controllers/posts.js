@@ -20,7 +20,6 @@ module.exports = {
 
     getPost: async(request, response) => {
         const post = await Post.findById(request.params.id)
-
         try {
             response.render('post', {
                 title: 'Capital.IO',

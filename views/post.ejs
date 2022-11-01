@@ -1,0 +1,22 @@
+<div class="container">
+    <article>
+        <div class="container data-container border">
+            <h1 class="d-flex justify-content-center"><%= post.title %></h1>
+                <div class="col-md-7  mx-auto">
+                    <img src="../public/img/undraw_investing_re_bov7.svg" alt="post">
+                </div>
+                <div class="container">
+                    <div class="row m-3 ">
+                        <h3 class="d-flex justify-content-center"><%= post.subtitle %></h3>
+                    </div>
+                    <div class="row m-3">
+                        <%- post.content %>
+                    </div>
+                    <div class="row m-1">
+                        <p><small class="text-muted">Posted on: <%= moment(post.post_date).format("dddd, MMMM DD, YYYY") %></small></p>
+                        <p><small class="text-muted">Posted by: <%= post.posted_by %></small></p>
+                    </div>
+                </div>
+        </div>
+    </article>
+</div>
