@@ -6,13 +6,13 @@
     </div>
     <div class="row">
         <div class="col">
-            <h3 class="bottom-buffer center about">Blog</h3>
+            <h3 class="mb-3 center about">Blog</h3>
         </div>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <% posts.forEach(post => { %>
             <div class="col-sm-6">
-                <div class="card">
+                <div class="card mb-3">
                     <div class="card-body">
                       <h5 class="card-title"><%= post.title %></h5>
                       <p class="card-text mb-1"><%- post.content.slice(0,91) + '...' %></p>

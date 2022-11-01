@@ -1,6 +1,6 @@
 <div class="container">
-    <article>
-        <div class="container data-container border">
+    <article class="mb-3">
+        <div class="data-container border">
             <h1 class="d-flex justify-content-center"><%= post.title %></h1>
                 <div class="col-md-7  mx-auto">
                     <img src="../public/img/undraw_investing_re_bov7.svg" alt="post">
@@ -16,6 +16,7 @@
                         <p><small class="text-muted">Posted on: <%= moment(post.post_date).format("dddd, MMMM DD, YYYY") %></small></p>
                         <p><small class="text-muted">Posted by: <%= post.posted_by %></small></p>
                     </div>
+                    <a href="/blog" class="btn btn-primary">Back to Blog</a>
                 </div>
         </div>
     </article>
