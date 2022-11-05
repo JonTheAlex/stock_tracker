@@ -1,33 +1,28 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-7  mx-auto ">
+        <div class="col-md-7  mx-auto">
             <img src="../public/img/undraw_blog_post_re_fy5x.svg" alt="blog">
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h3 class="bottom-buffer center about">Blog</h3>
+            <h3 class="mb-3 center about">Blog</h3>
         </div>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div>
+        <% posts.forEach(post => { %>
+            <div class="col-sm-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= post.title %></h5>
+                      <p class="card-text mb-1"><%- post.content.slice(0,91) + '...' %></p>
+                      <p class="card-text  mb-0"><small class="text-muted"><%= moment(post.post_date).format("dddd, MMMM DD, YYYY") %></small></p>
+                      <p class="card-text"><small class="text-muted">Posted by: <%= post.posted_by %></small></p>
+                      <a href="/blog/<%= post._id %>" class="btn btn-primary">Read More</a>
+                    </div>
+                  </div>
+            </div>
+        <% }) %>
     </div>
 </div>
 

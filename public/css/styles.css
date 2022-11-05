@@ -46,6 +46,16 @@ tbody > tr > td {
     white-space: nowrap;
 }
 
+button {
+    background-color: #63A3B6;
+    border-radius: 10%;
+    padding: 3px;
+}
+
+button:hover {
+    background-color: #93bfcc;
+}
+
 .navbar-image{
     width: 250px;
     height: 39px;
@@ -64,7 +74,7 @@ tbody > tr > td {
     min-width: 100%;
 }
 
-.social-media span {
+.social-media > * {
     background-color: #63A3B6;
     border-radius: 5%;
     padding: 1%;
@@ -72,7 +82,7 @@ tbody > tr > td {
 
 }
 
-.social-media span:hover {
+.social-media *:hover {
     background-color: #93bfcc;
 }
 

@@ -34,28 +34,26 @@
                 <table id="" class="table table-striped">
                     <thead>
                         <tr>
-                            <th style="width: 20%">Name</th>
-                            <th>State</th>
-                            <th>District</th>
-                            <th>Owner</th>
-                            <th>Asset</th>
-                            <th>Transaction Type</th>
-                            <th>Notification Date</th>
-                            <th>Transaction Date</th>
-                            <th>Amount</th>
+                            <th style="width:10%">Name</th>
+                            <th style="width:10%">State</th>
+                            <th style="width:10%">Owner</th>
+                            <th style="width:10%">Asset</th>
+                            <th style="width:10%">Transaction Type</th>
+                            <th style="width:10%">Notification Date</th>
+                            <th style="width:10%">Transaction Date</th>
+                            <th style="width:10%">Amount</th>
                         </tr>
                     </thead>
                     <tbody>
                         <% transactions.forEach(transaction => { %>
                             <tr><td><a href='/person/<%= transaction.person._id %>'><%= transaction.person.name %></a></td>
                                 <td><%= transaction.person.state %></td>
-                                <td><%= transaction.person.district %></td>
-                                <td><%= transaction.owner %></td>
+                                <td><%= transaction.asset_owner %></td>
                                 <td><%= transaction.asset_name %></td>
                                 <td><%= transaction.transaction_type %></td>
                                 <td><%= moment(transaction.transaction_date).format("MM-DD-YYYY") %></td>
                                 <td><%= moment(transaction.notification_date).format("MM-DD-YYYY") %></td>
-                                <td><%= transaction.amount %></td>
+                                <td><%= transaction.transaction_amount %></td>
                             </tr>
                         <% }) %>
                     </tbody> 
@@ -66,17 +64,15 @@
                 <table id="" class="table table-striped">
                     <thead>
                         <tr>
-                            <th style="width: 20%">Name</th>
-                            <th>Owner</th>
-                            <th>Asset</th>
-                            <th>Ticker</th>
-                            <th>Description</th>
-                            <th>Value</th>
-                            <th>Income Type(s)</th>
-                            <th>Income amount</th>
-                            <th>Notification Date</th>
-                            <th>Transaction Date</th>
-                            <th>Amount</th>
+                            <th style="width:10%">Name</th>
+                            <th style="width:10%">Owner</th>
+                            <th style="width:10%">Asset</th>
+                            <th style="width:10%">Value</th>
+                            <th style="width:10%">Income Type(s)</th>
+                            <th style="width:10%">Income amount</th>
+                            <th style="width:10%">Notification Date</th>
+                            <th style="width:10%">Transaction Date</th>
+                            <th style="width:8%">Amount</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -84,14 +80,12 @@
                             <tr><td><a href='/person/<%= asset.person._id %>'><%= asset.person.name %></a></td>
                                 <td><%= asset.asset_owner %></td>
                                 <td><%= asset.asset_name %></td>
-                                <td><%= asset.asset_ticker %></td>
-                                <td><%= asset.asset_description %></td>
                                 <td><%= asset.asset_value %></td>
                                 <td><%= asset.asset_income_type %></td>
                                 <td><%= asset.asset_income_amount %></td>
                                 <td><%= moment(asset.notification_date).format("MM-DD-YYYY") %></td>
                                 <td><%= moment(asset.transaction_date).format("MM-DD-YYYY") %></td>
-                                <td><%= asset.amount %></td>
+                                <td><%= asset.asset_amount %></td>
                             </tr>
                         <% }) %>
                     </tbody> 
@@ -104,7 +98,6 @@
 <script>
     $(document).ready(function () {
     $('.table').DataTable({
-            'scrollX': true,
             'scrollY': true,
             'info': false,
             'lengthChange': false,

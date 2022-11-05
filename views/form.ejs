@@ -1,98 +1,84 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+ 
 
 <div class="container">
-  <form>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputPassword4">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputAddress">Address</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    <div class="form-group">
-      <label for="inputAddress2">Address 2</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputCity">City</label>
-        <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputState">State</label>
-        <select id="inputState" class="form-control">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputZip">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </form>
-</div>
-<!-- <h3>Transaction Submission Form</h3>
-<div class="container">
-  <form action="/form/transaction/" method="POST">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="person-transaction">Select Person:</label>
-          <select class="form-control person-select" name="personTransaction" id="person-transaction" placeholder="Person">
+  <div class="data-container border">
+    <h3>Transaction Submission Form</h3>
+    <form action="/form/transaction/" method="POST">
+      <div class="row mb-1">
+        <div class="col">
+          <select class="form-control person-select" name="person_transaction" id="person_transaction">
             <option value="" disabled selected>Select Person</option>
           </select>
         </div>
-        <div class="form-group col-md-6">
-          <label for="asset_owner">Asset Owner</label>
-          <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">
+      </div>
+      <div class="row mb-1">
+        <div class="col">
+          <select class="form-control" id="asset_owner" name="asset_owner">
+            <option value="" disabled selected>Asset Owner</option>
+            <option value="0">Self</option>
+            <option value="1">JT</option>
+            <option value="2">SP</option>
+            <option value="3">DC</option>
+          </select>
         </div>
       </div>
-      <div class="form-row">
+      <div class="row mb-1">
         <div class="col">
           <input type="text" class="form-control" placeholder="Asset Name" id="asset_name" name="asset_name">
         </div>
+      </div>
+      <div class="row mb-1">
         <div class="col">
           <input type="text" class="form-control" placeholder="Asset Ticker" id="asset_ticker" name="asset_ticker">
         </div>
+      </div>
+      <div class="row mb-1">
         <div class="col">
           <input type="text" class="form-control" placeholder="Asset Description" id="asset_description" name="asset_description">
         </div>
       </div>
-      <div class="form-row">
+      <div class="row mb-1">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Asset Type" id="asset_type" name="asset_type">
+          <select class="form-control" id="asset_type" name="asset_type">
+            <option value="" disabled selected>Select Asset Type</option>
+            <option value="0">Stocks</option>
+            <option value="1">Bonds</option>
+            <option value="2">US Treasury Securities</option>
+            <option value="3">REIT</option>
+            <option value="4">Options/Futures</option>
+            <option value="5">529 Stocks/Bonds</option>
+            <option value="6">Hedge/Private Equity Funds</option>
+            <option value="7">Cryptocurrencies</option>
+            <option value="8">Life Insurance Policies/Annuities</option>
+          </select>
         </div>
+      </div>
+      <div class="row mb-1">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Transaction Type" id="transaction_type" name="transaction_type">
+          <select class="form-control" id="transaction_type" name="transaction_type">
+            <option value="" disabled selected>Select Transaction Type</option>
+            <option value="0">P</option>
+            <option value="1">S</option>
+            <option value="2">PS</option>
+            <option value="3">E</option>
+          </select>
         </div>
+      </div>
+      <div class="row mb-1">
         <div class="col">
           <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_date" name="transaction_date">
         </div>
       </div>
-      <div class="form-row">
+      <div class="row mb-1">
         <div class="col">
           <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_transaction_date" name="notification_transaction_date">
         </div>
+      </div>
+      <div class="row mb-1">
         <div class="col">
-          <label for="transaction-amount">Select Amount:</label>
-          <select class="form-control" id="transaction-amount" name="amountTransaction" placeholder="Amount">
+          <select class="form-control" id="transaction_amount" name="transaction_amount">
             <option value="" disabled selected>Select Amount</option>
             <option value="0">$0 - $15,000</option>
             <option value="1">$15,001 - $50,000</option>
@@ -102,73 +88,174 @@
             <option value="5">$500,001 - $1,000,000</option>
             <option value="6">$1,000,001 - $5,000,000</option>
             <option value="7">$5,000,001 - $25,000,000</option>
+            <option value="7">$25,000,001 - $50,000,000</option>
+            <option value="7">$50,000,000+</option>
           </select>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary" id="transaction-btn">Submit</button>
-  </form>
-</div> -->
-<!-- <h3>Asset Submission Form</h3>
-<div class="container">
-  <form form action="/form/asset/" method="POST"> 
-      <div class="form-row">
-        <div class="col">
-          <label for="person-asset">Select Person:</label>
-          <select class="form-control person-select" name="personAsset" id="person-asset" placeholder="Person">
-            <option value="" disabled selected>Select Person</option>
-          </select>
+      <button type="submit" class="" id="transaction-btn">Submit</button>
+    </form>
+  </div>
+
+  <div class="data-container border">
+    <h3>Asset Submission Form</h3>
+      <form action="/form/asset/" method="POST"> 
+        <div class="row mb-1">
+          <div class="col">
+            <select class="form-control person-select" name="person_asset" id="person_asset">
+              <option value="" disabled selected>Select Person</option>
+            </select>
+          </div>
         </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Asset Owner" id="asset_owner" name="asset_owner">
+        <div class="row mb-1">
+          <div class="col">           
+            <select class="form-control" id="asset_owner" name="asset_owner">
+              <option value="" disabled selected>Asset Owner</option>
+              <option value="0">Self</option>
+              <option value="1">JT</option>
+              <option value="2">SP</option>
+              <option value="3">DC</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="form-row">
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Asset Name" id="asset_name" name="asset_name">
+        <div class="row mb-1">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Asset Name" id="asset_name" name="asset_name">
+          </div>
         </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Asset Description" id="asset_description" name="asset_description">
+        <div class="row mb-1">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Asset Description" id="asset_description" name="asset_description">
+          </div>
         </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Asset Value" id="asset_value" name="asset_value">
+        <div class="row mb-1">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Asset Value" id="asset_value" name="asset_value">            
+          </div>
         </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Income Type" id="asset_income_type" name="asset_income_type">
+        <div class="row mb-1">
+          <div class="col">
+            <select class="form-control" id="asset_type" name="asset_type">
+              <option value="" disabled selected>Select Asset Type</option>
+              <option value="0">Real Property</option>
+              <option value="1">Farms</option>
+              <option value="2">Asset/Brokerage</option>
+              <option value="3">Asset/IRA/401K/NonFedRetAcct</option>
+              <option value="4">Pension</option>
+              <option value="5">529 College Savings Account</option>
+              <option value="6">Corporate Security</option>
+              <option value="7">Mutual Fund/ETF/REIT</option>
+              <option value="8">Govt Sec/Agency Debt</option>
+              <option value="9">Asset Backed Security</option>
+              <option value="10">Futures/Options</option>
+              <option value="11">HedgeFund/PE</option>
+              <option value="12">Cryptocurrency</option>
+              <option value="13">Annuity</option>
+              <option value="14">Insurance Policy</option>
+              <option value="15">Bank Account</option>
+              <option value="16">Insurance Policy</option>
+              <option value="17">Business Interest</option>
+              <option value="18">Debts Owed to Filer</option>
+              <option value="19">Trusts</option>
+              <option value="20">Investment Clubs</option>
+              <option value="21">Collectibles</option>
+              <option value="22">Intellectual Property/Royalties</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="form-row">
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Income Amount" id="asset_income_amount" name="asset_income_amount">
+        <div class="row mb-1">
+          <div class="col">
+            <select class="form-control" id="asset_income_type" name="asset_income_type">
+              <option value="" disabled selected>Select Income Type</option>
+              <option value="0">Dividends</option>
+              <option value="1">Interest</option>
+              <option value="2">Capital Gains</option>
+              <option value="3">Rent</option>
+              <option value="4">Royalties</option>
+              <option value="5">Business Interest</option>
+              <option value="6">Estate/Trust</option>
+              <option value="7">Debt Discharge</option>
+            </select>
+          </div>
         </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Transaction Type" id="asset_transaction_type" name="asset_transaction_type">
+        <div class="row mb-1">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Income Amount" id="asset_income_amount" name="asset_income_amount">
+          </div>
         </div>
-      </div>  
-      <div class="form-row">
-        <div class="col">
-          <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_asset_date" name="transaction_asset_date">
+        <div class="row mb-1">
+          <div class="col">
+            <select class="form-control" id="asset_transaction_type" name="asset_transaction_type">
+              <option value="" disabled selected>Select Transaction Type</option>
+              <option value="0">P</option>
+              <option value="1">S</option>
+              <option value="2">PS</option>
+              <option value="3">E</option>
+            </select>
+          </div>
         </div>
-        <div class="col">
-          <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_asset_date" name="notification_asset_date">
+        <div class="row mb-1">
+          <div class="col">
+            <input type="text" class="form-control calendar" placeholder="Transaction Date" id="transaction_asset_date" name="transaction_asset_date">
+          </div>
         </div>
-        <div class="col">
-          <label for="asset-amount">Select Amount:</label>
-          <select class="form-control" id="asset-amount" name="amountAsset" placeholder="Amount">
-            <option value="" disabled selected>Select Amount</option>
-            <option value="0">$0 - $15,000</option>
-            <option value="1">$15,001 - $50,000</option>
-            <option value="2">$50,001 - $100,000</option>
-            <option value="3">$100,001 - $250,000</option>
-            <option value="4">$250,000 - $500,000</option>
-            <option value="5">$500,001 - $1,000,000</option>
-            <option value="6">$1,000,001 - $5,000,000</option>
-            <option value="7">$5,000,001 - $25,000,000</option>
-          </select>
+        <div class="row mb-1">
+          <div class="col">
+            <input type="text" class="form-control calendar" placeholder="Notification Date" id="notification_asset_date" name="notification_asset_date">
+          </div>
         </div>
-      </div>
-      <button type="submit" class="btn btn-primary" id="asset-btn">Submit</button>
-  </form>
-</div> -->
+        <div class="row mb-1">
+          <div class="col">
+            <select class="form-control" id="asset_amount" name="amount_asset">
+              <option value="" disabled selected>Select Amount</option>
+              <option value="0">$0 - $15,000</option>
+              <option value="1">$15,001 - $50,000</option>
+              <option value="2">$50,001 - $100,000</option>
+              <option value="3">$100,001 - $250,000</option>
+              <option value="4">$250,000 - $500,000</option>
+              <option value="5">$500,001 - $1,000,000</option>
+              <option value="6">$1,000,001 - $5,000,000</option>
+              <option value="7">$5,000,001 - $25,000,000</option>
+              <option value="7">$25,000,001 - $50,000,000</option>
+              <option value="7">$50,000,000+</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="" id="asset-btn">Submit</button>
+      </form>
+  </div>
+  <div class="data-container border">
+    <h3>Post Submission Form</h3>
+      <form action="/form/post/" method="POST"> 
+        <div class="row mb-1">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Poster Name" id="user_name" name="user_name">
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Post Title" id="post_title" name="post_title">
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Post Image" id="post_image" name="post_image">
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col">
+            <input type="text" class="form-control calendar" placeholder="Post Date" id="post_date" name="post_date">
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col">
+            <textarea class="form-control" placeholder="Post Content" id="textarea" name="textarea"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="" id="post-btn">Submit</button>
+      </form>
+  </div>   
+</div>
 
 <script>flatpickr('.calendar', {})</script>
 <script>

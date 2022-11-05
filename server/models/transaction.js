@@ -5,7 +5,7 @@ const transactionSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Person',
     },
-    owner: {
+    asset_owner: {
         type: String,
         required: 'This field is required'
     },
@@ -33,13 +33,17 @@ const transactionSchema = new mongoose.Schema({
         type: Date,
         required: 'This field is required'
     },
-    notification_date: {
+    notification_transaction_date: {
         type: Date,
         required: 'This field is required'
     },
-    amount: {
+    transaction_amount: {
         type: String,
         required: 'This field is required'
+    },
+    created_at: {
+        type: Date,
+        default: Date.now
     }
 });
 
