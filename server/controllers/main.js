@@ -29,6 +29,12 @@ module.exports = {
         } 
     },
 
+    /**
+     * GET /
+     * HOMEPAGE
+     */
+
+
     getAbout: async(request, response) => {
         try {
             response.render('about', {
@@ -39,44 +45,22 @@ module.exports = {
         } catch (error) {
             response.status(500).send({message: error.message})
         } 
+    },
+
+    // /**
+    //  * GET /
+    //  * Newsletter
+    //  */
+
+    getNewsletter: async(request, response) => {
+        try {
+            response.render('newsletter', {
+            title:'Capital.IO',
+            layout:'./layouts/main',
+            loginStatus: request.user
+            })
+        } catch (error) {
+            response.status(500).send({message: error.message})
+        }
     }
 }
-
-// /**
-//  * GET /
-//  * Blog
-//  */
-
-// exports.blog = async(request, response) => {
-//     try {
-//         response.render('blog')
-//     } catch (error) {
-//         response.status(500).send({message: error.message})
-//     }
-// }
-
-// /**
-//  * GET /
-//  * Newsletter
-//  */
-
-// exports.newsletter = async(request, response) => {
-//     try {
-//         response.render('newsletter')
-//     } catch (error) {
-//         response.status(500).send({message: error.message})
-//     }
-// }
-
-// /**
-//  * GET /
-//  * About
-//  */
-
-// exports.about = async(request, response) => {
-//     try {
-//         response.render('about')
-//     } catch (error) {
-//         response.status(500).send({message: error.message})
-//     }
-// }
