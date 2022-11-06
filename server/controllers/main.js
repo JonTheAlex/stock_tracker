@@ -1,7 +1,11 @@
+const flash = require('express-flash')
+const validator = require('validator')
 const Transaction = require('../models/Transaction')
+const Asset = require('../models/Asset')
+const Newsletter = require('../models/Newsletter')
 const Person = require('../models/Person')
 const moment = require('moment')
-const Asset = require('../models/Asset')
+
 
 
 module.exports = {
@@ -52,15 +56,30 @@ module.exports = {
     //  * Newsletter
     //  */
 
-    getNewsletter: async(request, response) => {
-        try {
-            response.render('newsletter', {
-            title:'Capital.IO',
-            layout:'./layouts/main',
-            loginStatus: request.user
-            })
-        } catch (error) {
-            response.status(500).send({message: error.message})
-        }
+    postNewsletter: async(request, response) => {
+        console.log(request.body.email)
+        const validationErrors = []
+        
+        if (!validator.isEmail(request.body.email)) validationErrors.push({msg: 'Please enter a valid email address.'})
+
+        if (validationErrors.length){
+            request.flash('errors', validationErrors)
+            return response.redirect('/')
+        } else {
+            
+            try{
+                request.body.email = validator.normalizeEmail(request.body.email, { gmail_remove_dots: false })
+
+                await Newsletter.create({
+                    email: request.body.email
+                })
+                console.log('Email added to Newsletter')
+                response.redirect('/')
+            } catch (error){
+                console.log(error)
+                console.log('Email not added to Newsletter')
+                response.redirect('/')
+            }   
+        } 
     }
 }

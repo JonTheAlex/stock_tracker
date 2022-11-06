@@ -86,6 +86,10 @@ button:hover {
     background-color: #93bfcc;
 }
 
+button:hover {
+    background-color: #93bfcc;
+}
+
 .top-buffer {
     margin-top: 5%;
 }
@@ -119,7 +123,6 @@ button:hover {
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    /* background-color: #fff; */
     background-clip: padding-box;
     border: 1px solid #ced4da;
     -webkit-appearance: none;
@@ -132,32 +135,26 @@ button:hover {
 .card.newsletter-card{
     padding: 20px;
     background-color: blue;
-        padding-bottom: 50px;
+    padding-bottom: 50px;
     padding-top: 50px;
  
 }
 
 .form-control-newletter:focus {
     color: #495057;
-    /* background-color: #fff; */
     border-color: #f9a826;
     outline: 0;
     box-shadow: none;
 }
 
 .border-rad-newsletter{
-
     border-top-right-radius: 28px;
     border-bottom-right-radius: 28px;
-
-    /* color: #fff; */
     background-color: #63A3B6;
     border-color: #EEEEEE;
 }
 
 .border-rad-newsletter:hover{
-   
-     background-color: #63A3B6;
+    background-color: #63A3B6;
     border-color: #EEEEEE;
-
 }

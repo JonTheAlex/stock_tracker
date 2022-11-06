@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const mainController = require('../controllers/main')
-const blogController = require('../controllers/posts')
 const authController = require('../controllers/auth')
 const personController = require('../controllers/person')
 const postsController = require('../controllers/posts')
@@ -19,6 +18,5 @@ router.get('/signup', authController.getSignUp);
 router.post('/signup', authController.postSignup);
 router.get('/signout', authController.signOut)
 router.get('/person/:id', personController.getPerson)
-router.get('/newsletter', mainController.getNewsletter);
-
+router.post('/newsletter', mainController.postNewsletter)
  module.exports = router
