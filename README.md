@@ -23,7 +23,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/JonTheAlex/stock_tracker">
-    <img src="images/homepage.PNG" alt="Logo" width="1904" height="971">
+    <img src="images/homepage.PNG" alt="Logo" width="952" height="485">
   </a>
 
   <h3 align="center">Best-README-Template</h3>
