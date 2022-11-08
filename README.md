@@ -23,7 +23,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/JonTheAlex/stock_tracker">
-    <img src="images/homepage.PNG" alt="Logo" width="952" height="485">
+    <img src="images/homepage.PNG" alt="Logo" width="714" height="364">
   </a>
 
   <h3 align="center">Capitaltrades.io - Congressional Stock Tracker</h3>
