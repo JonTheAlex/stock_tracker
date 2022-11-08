@@ -61,11 +61,12 @@ For the future there are a few things i would like to implement into the project
 
 ### Built With
 
-* [![EJS][EJS]][EJS-url]
-* [![Node][Node]][Node-url]
-* [![Express][Express]][Express-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* Node.JS
+* Express.JS
+* Bootstrap
+* jQuery
+* EJS
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,7 +82,7 @@ Distributed under the CC BY-NC-ND License. See `LICENSE.txt` for more informatio
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - [@your_twitter]([https://twitter.com/JonTheAlex](https://twitter.com/JonAlex314526))
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
