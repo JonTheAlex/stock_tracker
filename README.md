@@ -62,8 +62,8 @@ For the future there are a few things i would like to implement into the project
 ### Built With
 
 * [![EJS][EJS]][EJS-url]
-* [![Node.js][Node.js]][Node-url]
-* [![Express.js][Express.js]][Express-url]
+* [![Node][Node]][Node-url]
+* [![Express][Express]][Express-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
