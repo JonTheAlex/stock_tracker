@@ -77,6 +77,6 @@ Distributed under the CC BY-NC-ND License. See `LICENSE.txt` for more informatio
 
 Your Name - [[@your_twitter]]([https://twitter.com/JonTheAlex](https://twitter.com/JonAlex314526))
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/JonTheAlex/stock_tracker))
+Project Link: [Capitatrades.IO](https://github.com/JonTheAlex/stock_tracker))
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
