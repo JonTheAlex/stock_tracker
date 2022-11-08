@@ -26,7 +26,7 @@
     <img src="images/homepage.PNG" alt="Logo" width="952" height="485">
   </a>
 
-  <h3 align="center">Capital.io - Congressional Stock Tracker</h3>
+  <h3 align="center">Capitaltrades.io - Congressional Stock Tracker</h3>
 
   <p align="center">
     Web application to track the stock trades of Members of Congress
@@ -46,24 +46,20 @@
 
 <img src="images/capitaltrades.png">
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Capitaltrades.io is a full stack web application that displays the trades/assets of members of Congress. This project started from a python script I wrote 3 years ago while working with our local tech scene.  It started with parsing pdf records from the Ethics Committee website and evolved to include basic image recognition with OpenCV and including both the House and Senate record collections.  I wanted to give the script more of a presentable front end and learned web development (MERN) with <a href="https://leonnoel.com/100devs/">#100Devs</a>.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+How Does it Work?:
+* A script crawls the Ethics Committee website and pulls down all the records that are posted.
+* The records are organized by person/year for easy organization
+* Those records are then uploaded into a Mongodb database, where a Node.js app manages the website/backend.  Bootstrap is     used for the front-end for easy mobile responsiveness
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+For the future there are a few things i would like to implement into the project. More JS to prevent page reloads, and more indepth analysis of returns, graphs, more interactiveness of the website
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [![EJS][EJS]][EJS-url]
 * [![Node.js][Node.js]][Node-url]
@@ -74,7 +70,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
-## License
+<img src="https://licensebuttons.net/l/by-nc-nd/3.0/88x31.png" alt="" width="88" height="31">
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
