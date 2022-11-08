@@ -55,9 +55,6 @@ How Does it Work?:
 
 For the future there are a few things i would like to implement into the project. More JS to prevent page reloads, and more indepth analysis of returns, graphs, more interactiveness of the website
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
@@ -66,9 +63,6 @@ For the future there are a few things i would like to implement into the project
 * Bootstrap
 * jQuery
 * EJS
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 ## License
