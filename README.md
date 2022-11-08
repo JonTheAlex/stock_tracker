@@ -71,9 +71,6 @@ For the future there are a few things i would like to implement into the project
 
 Distributed under the CC BY-NC-ND License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
