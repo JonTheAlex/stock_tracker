@@ -57,29 +57,29 @@ module.exports = {
     //  */
 
     postNewsletter: async(request, response) => {
-        console.log(request.body.email)
-        const validationErrors = []
+        console.log(request.body)
+        // const validationErrors = []
         
-        if (!validator.isEmail(request.body.email)) validationErrors.push({msg: 'Please enter a valid email address.'})
+        // if (!validator.isEmail(request.body.email)) validationErrors.push({msg: 'Please enter a valid email address.'})
 
-        if (validationErrors.length){
-            request.flash('errors', validationErrors)
-            return response.redirect('/')
-        } else {
+        // if (validationErrors.length){
+        //     request.flash('errors', validationErrors)
+        //     return response.redirect('/')
+        // } else {
             
-            try{
-                request.body.email = validator.normalizeEmail(request.body.email, { gmail_remove_dots: false })
+        //     try{
+        //         request.body.email = validator.normalizeEmail(request.body.email, { gmail_remove_dots: false })
 
-                await Newsletter.create({
-                    email: request.body.email
-                })
-                console.log('Email added to Newsletter')
-                response.redirect('/')
-            } catch (error){
-                console.log(error)
-                console.log('Email not added to Newsletter')
-                response.redirect('/')
-            }   
-        } 
+        //         await Newsletter.create({
+        //             email: request.body.email
+        //         })
+        //         console.log('Email added to Newsletter')
+        //         response.redirect('/')
+        //     } catch (error){
+        //         console.log(error)
+        //         console.log('Email not added to Newsletter')
+        //         response.redirect('/')
+        //     }   
+        // } 
     }
 }

@@ -30,7 +30,7 @@
             <div class="container data-container border">
                 <div class="m-1 newsletter-form">
                     <h5 class="center">Signup for the Newsletter!</h5>
-                    <form action="" id="newsletter-form" method="POST">
+                    <form id="newsletter-form">
                         <input type="text" class="m-1 form-control" placeholder="Enter email" id="email" name="email">
                         <button type="submit" class="m-1 btn btn-success border-rad" id="email-btn" style="background-color: #63A3B6; color: #EEEEEE">Subscribe</button>
                     </form>
@@ -116,14 +116,15 @@
     });
 </script>
 <script>
-    const newsletter_submission = function(event){
-        alert('Email Submitted')
-        event.preventDefault()
-    };
+    const newsletterSubmission = function(event){
+        event.preventDefault();
+        alert('Email not submitted')
+    }
 
-    var form = document.getElementById('newsletter-form');
-
-    form.addEventListener('submit', newsletter_submission)
+    const form = document.getElementById('newsletter-form')
+    form.addEventListener("submit", newsletterSubmission, true)
+    
+    
 </script>
 
 
