@@ -116,9 +116,22 @@
     });
 </script>
 <script>
-    const newsletterSubmission = function(event){
+    const newsletterSubmission = async function(event){
         event.preventDefault();
-        alert('Email not submitted')
+        
+        const formData = new FormData()
+        const email = document.getElementById('email').value;
+
+        data.append('email', email)
+
+        const response = await fetch('/newsletter', {
+            method:'POST',
+            body: formData
+        })
+
+        const data = await response.json()
+        console.log(data)
+
     }
 
     const form = document.getElementById('newsletter-form')
