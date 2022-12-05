@@ -29,6 +29,7 @@ app.use(expressLayouts)
 app.set('layout', './layouts/main')
 
 app.use(express.urlencoded({extended:true}))
+app.use(express.json())
 
 //Sessions
 app.use(
