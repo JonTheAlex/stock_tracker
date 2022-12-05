@@ -50,7 +50,7 @@ app.use('/', mainRoutes)
 app.use('/blog', postsRoutes)
 app.use('/form', formRoutes)
 
-//PORT = 8000
+//PORT = 8080
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`)
 })
