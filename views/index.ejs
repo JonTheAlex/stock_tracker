@@ -27,6 +27,15 @@
                     <p class="center"><%= recordData.totalReturn %></p>
                     <p class="center">Total % Return</p>
             </div> 
+            <div class="container data-container border">
+                <div class="m-1 newsletter-form">
+                    <h5 class="center">Signup for the Newsletter!</h5>
+                    <form id="newsletter-form">
+                        <input type="text" class="m-1 form-control" placeholder="Enter email" id="email" name="email">
+                        <button type="submit" class="m-1 btn btn-success border-rad" id="email-btn" style="background-color: #63A3B6; color: #EEEEEE">Subscribe</button>
+                    </form>
+                </div> 
+            </div> 
         </div>
         <div class="col col-lg-10">
             <div class="data-container border">
@@ -105,6 +114,30 @@
             'paging': false
         });
     });
+</script>
+<script>
+    const newsletterSubmission = async function(event){
+        event.preventDefault();
+        
+        const formData = new FormData()
+        const email = document.getElementById('email').value;
+
+        data.append('email', email)
+
+        const response = await fetch('/newsletter', {
+            method:'POST',
+            body: formData
+        })
+
+        const data = await response.json()
+        console.log(data)
+
+    }
+
+    const form = document.getElementById('newsletter-form')
+    form.addEventListener("submit", newsletterSubmission, true)
+    
+    
 </script>
 
 
