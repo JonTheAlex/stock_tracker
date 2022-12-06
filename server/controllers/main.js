@@ -12,7 +12,7 @@ module.exports = {
     
     /**
      * GET /
-     * HOMEPAGE
+     * Homepage
      */
 
     getIndex: async(request, response) => {
@@ -35,9 +35,8 @@ module.exports = {
 
     /**
      * GET /
-     * HOMEPAGE
+     * About
      */
-
 
     getAbout: async(request, response) => {
         try {
@@ -52,34 +51,40 @@ module.exports = {
     },
 
     // /**
-    //  * GET /
+    //  * POST /
     //  * Newsletter
     //  */
 
     postNewsletter: async(request, response) => {
-        console.log(request.body)
-        // const validationErrors = []
+        const validationErrors = []
         
-        // if (!validator.isEmail(request.body.email)) validationErrors.push({msg: 'Please enter a valid email address.'})
+        if (!validator.isEmail(request.body.email)) validationErrors.push({msg: 'Please enter a valid email address.'})
 
-        // if (validationErrors.length){
-        //     request.flash('errors', validationErrors)
-        //     return response.redirect('/')
-        // } else {
-            
-        //     try{
-        //         request.body.email = validator.normalizeEmail(request.body.email, { gmail_remove_dots: false })
-
-        //         await Newsletter.create({
-        //             email: request.body.email
-        //         })
-        //         console.log('Email added to Newsletter')
-        //         response.redirect('/')
-        //     } catch (error){
-        //         console.log(error)
-        //         console.log('Email not added to Newsletter')
-        //         response.redirect('/')
-        //     }   
-        // } 
+        if (validationErrors.length){
+            request.flash('errors', validationErrors)
+            return response.redirect('/')
+        } else {
+                request.body.email = validator.normalizeEmail(request.body.email, { gmail_remove_dots: false })
+  
+            try{
+                const email = await Newsletter.find({email: request.body.email})
+                console.log(email)
+                if (email.length === 0) {
+                    await Newsletter.create({
+                        email: request.body.email
+                    })
+                    console.log('Email added to Newsletter')
+                    response.send({status:201})
+                } else {
+                    console.log('Email exists in Newsletter')
+                    response.send({status:405})
+                }
+                
+            } catch (error){
+                console.log(error)
+                console.log('Email failed to add to Newsletter')
+                response.send({status:400})
+            }   
+        } 
     }
 }

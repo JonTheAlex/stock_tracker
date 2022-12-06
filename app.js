@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')
@@ -30,6 +31,7 @@ app.set('layout', './layouts/main')
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
+app.use(cors())
 
 //Sessions
 app.use(

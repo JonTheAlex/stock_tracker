@@ -120,10 +120,11 @@
     const newsletterSubmission = async function(event){
         event.preventDefault();
 
-        data = {
-            email: "pleasefuckingwork@email.com"
+        let data = {
+            email: document.getElementById('email').value
         }
-        await fetch("/newsletter", {
+
+        let response = await fetch("/newsletter", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -131,8 +132,19 @@
             body: JSON.stringify(data),
         })
 
-        
+        response = await response.json()
+
+        console.log(response.status)
     }
+        
+    //     response.status === 400 ? emailModal(400) :
+    //         response.status === 405 ? emailModal(405) :
+    //             emailModal(201)
+    // }
+
+    // function emailModal(status){
+
+    // }
 
     const form = document.getElementById("newsletter-form")
     form.addEventListener("submit", newsletterSubmission)
