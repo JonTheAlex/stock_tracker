@@ -133,18 +133,19 @@
         })
 
         response = await response.json()
+        showConfirmation(response.status)
 
-        console.log(response.status)
     }
-        
-    //     response.status === 400 ? emailModal(400) :
-    //         response.status === 405 ? emailModal(405) :
-    //             emailModal(201)
-    // }
 
-    // function emailModal(status){
-
-    // }
+    function showConfirmation(status){
+        if (status === 400){
+            document.getElementById('email').value = "Email Not Added"
+        } else if (status === 405){
+            document.getElementById('email').value = "Email Exists"
+        } else {
+            document.getElementById('email').value = "Email Added"
+        }
+    }
 
     const form = document.getElementById("newsletter-form")
     form.addEventListener("submit", newsletterSubmission)

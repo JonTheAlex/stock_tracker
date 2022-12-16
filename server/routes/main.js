@@ -18,5 +18,5 @@ router.get('/signup', authController.getSignUp);
 router.post('/signup', authController.postSignup);
 router.get('/signout', authController.signOut)
 router.get('/person/:id', personController.getPerson)
-router.post('/newsletter', mainController.postNewsletter)
+router.post('/newsletter', mainController.postEmail)
  module.exports = router

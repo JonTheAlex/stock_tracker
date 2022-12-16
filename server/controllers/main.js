@@ -2,7 +2,7 @@ const flash = require('express-flash')
 const validator = require('validator')
 const Transaction = require('../models/Transaction')
 const Asset = require('../models/Asset')
-const Newsletter = require('../models/Newsletter')
+const Email = require('../models/Email')
 const Person = require('../models/Person')
 const moment = require('moment')
 
@@ -55,22 +55,20 @@ module.exports = {
     //  * Newsletter
     //  */
 
-    postNewsletter: async(request, response) => {
+    postEmail: async(request, response) => {
         const validationErrors = []
         
-        if (!validator.isEmail(request.body.email)) validationErrors.push({msg: 'Please enter a valid email address.'})
+        if (!validator.isEmail(request.body.email)){validationErrors.push({msg: 'Please enter a valid email address.'})}
 
         if (validationErrors.length){
-            request.flash('errors', validationErrors)
-            return response.redirect('/')
+            return response.send({status:400})
         } else {
                 request.body.email = validator.normalizeEmail(request.body.email, { gmail_remove_dots: false })
-  
             try{
-                const email = await Newsletter.find({email: request.body.email})
+                const email = await Email.find({email: request.body.email})
                 console.log(email)
                 if (email.length === 0) {
-                    await Newsletter.create({
+                    await Email.create({
                         email: request.body.email
                     })
                     console.log('Email added to Newsletter')
