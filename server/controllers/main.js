@@ -74,7 +74,7 @@ module.exports = {
                     console.log('Email added to Newsletter')
                     response.send({status:201})
                 } else {
-                    console.log('Email exists in Newsletter')
+                    console.log('Email failed to add to Newsletter')
                     response.send({status:405})
                 }
                 
