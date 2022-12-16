@@ -16,8 +16,8 @@ module.exports = {
      */
 
     getIndex: async(request, response) => {
-        const transactions = await Transaction.find().populate({path: 'person', select: '_id name state district'})
-        const assets = await Asset.find().populate({path: 'person', select: '_id name'})
+        const transactions = await Transaction.find().populate({path: 'person', select: '_id name state district'}).sort({transaction_date: 'desc'}).limit(100)
+        const assets = await Asset.find().populate({path: 'person', select: '_id name'}).sort({transaction_asset_date: 'desc'}).limit(100)
         try {            
             response.render('index', {
                 title:'Capital.IO', 
