@@ -17,16 +17,16 @@ const Person = require('../models/Person')
     exports.createTransaction = async (request, response) => {
         try {
             await Transaction.create({
-                person: request.body.personTransaction,
-                owner: request.body.asset_owner,
-                asset_name: request.body.asset_name,
-                asset_ticker: request.body.asset_ticker,
-                asset_description: request.body.asset_description,
-                asset_type: request.body.asset_type,
-                transaction_type: request.body.transaction_type,
-                transaction_date: request.body.transaction_date,
-                notification_date: request.body.notification_transaction_date,
-                amount: request.body.amountTransaction
+                person: request.body.person,
+                owner: request.body.owner,
+                name: request.body.name,
+                ticker: request.body.ticker,
+                description: request.body.description,
+                type: request.body.type,
+                code: request.body.code,
+                receipt_date: request.body.receipt_date,
+                notification_date: request.body.notification_date,
+                amount: request.body.amount
             })
             console.log('Transaction Created')
             response.redirect('/form')
@@ -39,18 +39,19 @@ const Person = require('../models/Person')
     exports.createAsset = async (request, response) => {
         try {
             await Asset.create({
-              person: request.body.personAsset,
-              asset_owner: request.body.asset_owner,
-              asset_name: request.body.asset_name,
-              asset_ticker: request.body.asset_ticker,
-              asset_description: request.body.asset_description,
-              asset_value: request.body.asset_value,
-              asset_income_type: request.body.asset_income_type,
-              asset_income_amount: request.body.asset_income_amount,
-              asset_transaction_type: request.body.asset_transaction_type,
-              transaction_date: request.body.transaction_asset_date,
-              notification_date: request.body.notification_asset_date,
-              amount: request.body.amountAsset
+                person: request.body.person,
+                owner: request.body.owner,
+                name: request.body.name,
+                ticker: request.body.ticker,
+                description: request.body.description,
+                value: request.body.value,
+                type: request.body.type,
+                income_type: request.body.income_type,
+                income_amount: request.body.income_amount,
+                code: request.body.code,
+                receipt_date: request.body.receipt_date,
+                notification_date: request.body.notification_date,
+                amount: request.body.amount
             })
             console.log('Asset Created')  
             response.redirect('/form')

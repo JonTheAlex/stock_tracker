@@ -5,41 +5,32 @@ const transactionSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Person',
     },
-    asset_owner: {
+    owner: {
         type: String,
-        required: 'This field is required'
     },
-    asset_name: {
+    name: {
         type: String,
-        required: 'This field is required'
     },
-    asset_ticker: {
+    ticker: {
         type: String,
-        required: 'This field is required'
     },
-    asset_description: {
+    description: {
         type: String,
-        required: 'This field is required'
     },
-    asset_type: {
+    type: {
         type: String,
-        required: 'This field is required'
     },
-    transaction_type: {
+    code: {
         type: String,
-        required: 'This field is required'
     },
-    transaction_date: {
+    receipt_date: {
         type: Date,
-        required: 'This field is required'
     },
-    notification_transaction_date: {
+    notification_date: {
         type: Date,
-        required: 'This field is required'
     },
-    transaction_amount: {
+    amount: {
         type: String,
-        required: 'This field is required'
     },
     created_at: {
         type: Date,
