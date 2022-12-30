@@ -71,14 +71,16 @@ button:hover {
 
 .social-media {
     display: inline-block;
+    text-align: center;
     min-width: 100%;
 }
 
 .social-media > * {
     background-color: #63A3B6;
     border-radius: 5%;
-    padding: 1%;
-    margin-left: 1px;
+    padding: 1.5%;
+    margin-right: auto;
+    font-size: small;
 
 }
 
