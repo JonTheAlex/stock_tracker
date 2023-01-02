@@ -87,14 +87,14 @@
                     <tbody>
                         <% assets.forEach(asset => { %>
                             <tr><td><a href='/person/<%= asset.person._id %>'><%= asset.person.name %></a></td>
-                                <td><%= asset.asset_owner %></td>
-                                <td><%= asset.asset_name %></td>
-                                <td><%= asset.asset_value %></td>
-                                <td><%= asset.asset_income_type %></td>
-                                <td><%= asset.asset_income_amount %></td>
+                                <td><%= asset.owner %></td>
+                                <td><%= asset.name %></td>
+                                <td><%= asset.ticker %></td>
+                                <td><%= asset.income_type %></td>
+                                <td><%= asset.income_amount %></td>
                                 <td><%= moment(asset.notification_date).format("MM-DD-YYYY") %></td>
                                 <td><%= moment(asset.transaction_date).format("MM-DD-YYYY") %></td>
-                                <td><%= asset.asset_amount %></td>
+                                <td><%= asset.amount %></td>
                             </tr>
                         <% }) %>
                     </tbody> 

@@ -53,32 +53,30 @@
         <table id="" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Owner</th>
-                    <th>Asset</th>
-                    <th>Description</th>
-                    <th>Value</th>
-                    <th>Income Type(s)</th>
-                    <th>Income Amount</th>
-                    <th>Notification Date</th>
-                    <th>Transaction Date</th>
-                    <th>Amount</th>
+                    <th style="width:10%">Name</th>
+                    <th style="width:10%">Owner</th>
+                    <th style="width:10%">Asset</th>
+                    <th style="width:10%">Value</th>
+                    <th style="width:10%">Income Type(s)</th>
+                    <th style="width:10%">Income amount</th>
+                    <th style="width:10%">Notification Date</th>
+                    <th style="width:10%">Transaction Date</th>
+                    <th style="width:8%">Amount</th>
                 </tr>
             </thead>
             <tbody>
-                <% assets.forEach(asset => { %>
-                    <tr><td><%= person.name %></td>
-                        <td><%= asset.asset_owner %></td>
-                        <td><%= asset.asset_name %></td>
-                        <td><%= asset.asset_description %></td>
-                        <td><%= asset.asset_value %></td>
-                        <td><%= asset.asset_income_type %></td>
-                        <td><%= asset.asset_income_amount %></td>
-                        <td><%= moment(asset.notification_date).format("MM-DD-YYYY") %></td>
-                        <td><%= moment(asset.transaction_date).format("MM-DD-YYYY") %></td>
-                        <td><%= asset.asset_amount %></td>
-                    </tr>
-                <% }) %>
+                 <% assets.forEach(asset => { %>
+                            <tr><td><%= person.name %></td>
+                                <td><%= asset.owner %></td>
+                                <td><%= asset.name %></td>
+                                <td><%= asset.ticker %></td>
+                                <td><%= asset.income_type %></td>
+                                <td><%= asset.income_amount %></td>
+                                <td><%= moment(asset.notification_date).format("MM-DD-YYYY") %></td>
+                                <td><%= moment(asset.transaction_date).format("MM-DD-YYYY") %></td>
+                                <td><%= asset.amount %></td>
+                            </tr>
+                        <% }) %>
             </tbody> 
         </table>
     </div>
