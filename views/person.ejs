@@ -22,7 +22,7 @@
     </div>
     <div class="data-container border">
         <h3>Stock Trades</h3>
-        <table id="" class="table table-striped" style="width:100%">
+        <table id="transaction-table" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -50,7 +50,7 @@
     </div>
     <div class="data-container border">
         <h3>Assets</h3>
-        <table id="" class="table table-striped" style="width:100%">
+        <table id="asset-table" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
                     <th style="width:10%">Name</th>
@@ -84,8 +84,21 @@
 
 <script>
     $(document).ready(function () {
-        $('.table').DataTable({
+        $('#transaction-table').DataTable({
             'scrollY': '50vh',
+            'order': [5, 'desc'],
+            'scrollCollapse': true,
+            'info':false,
+            'searching': false,
+            'lengthChange': false,
+            'paging': false
+        })
+    });
+
+    $(document).ready(function () {
+        $('#asset-table').DataTable({
+            'scrollY': '50vh',
+            'order': [7, 'desc'],
             'scrollCollapse': true,
             'info':false,
             'searching': false,
