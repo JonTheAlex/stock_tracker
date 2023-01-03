@@ -3,7 +3,6 @@ const validator = require('validator')
 const Transaction = require('../models/transaction')
 const Asset = require('../models/Asset')
 const Email = require('../models/Email')
-const Person = require('../models/Person')
 const moment = require('moment')
 
 
