@@ -18,12 +18,21 @@ module.exports = {
     getIndex: async(request, response) => {
         const transactions = await Transaction.find().sort({'receipt_date': -1}).limit(100).populate({path: 'person', select: '_id name state district'})
         const assets = await Asset.find().sort({'receipt_date': -1}).limit(100).populate({path: 'person', select: '_id name'})
+        const updated = await Transaction.find().sort({'created_at': -1}).limit(1)
+        const transCount = await Transaction.estimatedDocumentCount()
+        const assetCount = await Transaction.estimatedDocumentCount()
+        const totalCount = transCount + assetCount
+
         try {            
             response.render('index', {
                 title:'Capital.IO', 
                 moment:moment, 
                 layout:'./layouts/main', 
-                recordData: {},
+                recordData: {
+                    updated: updated[0].created_at.toLocaleDateString(),
+                    totalRecords: totalCount,
+                    totalValue: 0,
+                },
                 transactions:transactions, 
                 assets: assets,
                 loginStatus: request.user
