@@ -4,7 +4,7 @@ const {ensureAuth, ensureAdmin} = require('../../middleware/auth')
 const formController = require('../controllers/form')
 const postsController = require('../controllers/posts')
 
-router.get('/', formController.getForm);
+router.get('/', ensureAuth, ensureAdmin, formController.getForm);
 router.post('/transaction', formController.createTransaction)
 router.post('/asset', formController.createAsset)
 router.post('/post', postsController.createPost)

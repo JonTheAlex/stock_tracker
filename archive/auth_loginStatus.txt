@@ -1,0 +1,9 @@
+Goes around signunp link, triggers different text            
+
+<li class="nav-item">
+              <% if (loginStatus) { %>
+                <a class="nav-link" href="/signout">Sign-Out</a>
+              <% } else { %>
+                <a class="nav-link" href="/signin">Sign-In</a>
+              <% } %>
+            </li>
