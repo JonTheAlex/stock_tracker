@@ -1,6 +1,6 @@
 const Person = require('../models/Person')
 const moment = require('moment')
-const Transaction = require('../models/Transaction')
+const Transaction = require('../models/transaction')
 const Asset = require('../models/Asset')
 
 module.exports = {

@@ -10,9 +10,9 @@ const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
 const expressLayouts = require('express-ejs-layouts')
-const mainRoutes = require('./server/routes/main')
-const formRoutes = require('./server/routes/form')
-const postsRoutes = require('./server/routes/posts')
+const mainRoutes = require('../server/routes/main')
+const formRoutes = require('../server/routes/form')
+const postsRoutes = require('../server/routes/posts')
 
 require('dotenv').config({path: './config/.env'})
 

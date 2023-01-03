@@ -1,6 +1,6 @@
 const flash = require('express-flash')
 const validator = require('validator')
-const Transaction = require('../models/Transaction')
+const Transaction = require('../models/transaction')
 const Asset = require('../models/Asset')
 const Email = require('../models/Email')
 const Person = require('../models/Person')
