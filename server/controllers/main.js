@@ -20,8 +20,6 @@ module.exports = {
         const assets = await Asset.find().sort({'receipt_date': -1}).limit(100).populate({path: 'person', select: '_id name'})
         const updated = await Transaction.find().sort({'created_at': -1}).limit(1)
         const transCount = await Transaction.estimatedDocumentCount()
-        const assetCount = await Transaction.estimatedDocumentCount()
-        const totalCount = transCount + assetCount
 
         try {            
             response.render('index', {
@@ -30,7 +28,7 @@ module.exports = {
                 layout:'./layouts/main', 
                 recordData: {
                     updated: updated[0].created_at.toLocaleDateString(),
-                    totalRecords: totalCount,
+                    totalRecords: transCount,
                     totalValue: 0,
                 },
                 transactions:transactions, 
