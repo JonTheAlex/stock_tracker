@@ -1,6 +1,6 @@
 const Transaction = require('../models/transaction')
 const Asset = require('../models/Asset')
-const Person = require('../models/Person')
+const Person = require('../models/person')
 
     exports.getForm = (request, response) => {
         try {            
