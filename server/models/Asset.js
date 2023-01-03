@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const assetSchema = new mongoose.Schema({
     person: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'person',
+            ref: 'Person',
     },
     owner: {
         type: String,
@@ -47,4 +47,4 @@ const assetSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('asset', assetSchema)
+module.exports = mongoose.model('Asset', assetSchema)

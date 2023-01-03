@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const transactionSchema = new mongoose.Schema({
     person: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'person',
+            ref: 'Person',
     },
     owner: {
         type: String,
@@ -38,4 +38,4 @@ const transactionSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('transaction', transactionSchema)
+module.exports = mongoose.model('Transaction', transactionSchema)

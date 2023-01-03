@@ -1,8 +1,8 @@
 const flash = require('express-flash')
 const validator = require('validator')
-const Transaction = require('../models/transaction')
-const Asset = require('../models/asset')
-const Email = require('../models/email')
+const Transaction = require('../models/Transaction')
+const Asset = require('../models/Asset')
+const Email = require('../models/Email')
 const moment = require('moment')
 
 
