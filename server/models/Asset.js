@@ -47,4 +47,4 @@ const assetSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Asset', assetSchema)
+module.exports = mongoose.model('asset', assetSchema)

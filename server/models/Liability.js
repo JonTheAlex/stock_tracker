@@ -19,4 +19,4 @@ const liabilitySchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('Liability', liabilitySchema)
+module.exports = mongoose.model('liability', liabilitySchema)
